@@ -1,0 +1,12 @@
+import styled from 'styled-components';
+
+const Icon = styled.div`
+  text-align: center;
+  cursor: pointer;
+  i {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+  }
+`;
+export default Icon;

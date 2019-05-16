@@ -9,7 +9,14 @@
   "rules": {
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": 1,
+    "import/no-unresolved": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   }
 }

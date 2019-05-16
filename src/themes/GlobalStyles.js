@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'asset/fontello/css/fontello.css';
+
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Alegreya:400,700i');
 *,*::after,*::before{
@@ -12,5 +14,6 @@ const GlobalStyle = createGlobalStyle`
    font-size:1.6rem;
    font-family:Alegreya,sans-serif;
    font-weight:700;
+   background-color: hsl(30, 6%, 93%);
   }`;
 export default GlobalStyle;
