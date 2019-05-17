@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import Icon from 'components/atoms/Icon/Icon';
 
 const ListElement = styled(Icon)`
@@ -19,11 +19,21 @@ const TitleElement = styled.div`
 
 const ListWrapper = styled.nav`
   list-style: none;
+  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
+    ${({ horizontal }) =>
+      horizontal &&
+      css`
+        display: flex;
+        & > li {
+          flex-basis: 20%;
+        }
+      `}
+  }
 `;
 
-const MenuElements = () => {
+const MenuElements = ({ horizontal }) => {
   return (
-    <ListWrapper>
+    <ListWrapper horizontal={horizontal}>
       <ListElement as="li">
         <i className="icon-home" />
         <TitleElement>Strona główna</TitleElement>
@@ -47,5 +57,10 @@ const MenuElements = () => {
     </ListWrapper>
   );
 };
-
+MenuElements.propTypes = {
+  horizontal: PropTypes.bool,
+};
+MenuElements.defaultProps = {
+  horizontal: false,
+};
 export default MenuElements;

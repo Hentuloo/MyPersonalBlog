@@ -1,12 +1,16 @@
 import React from 'react';
-import PostTemplates from 'templates/PostTemplates';
+// import PostTemplates from 'templates/PostTemplates';
+import ViewTemplates from 'templates/ViewTemplates';
+import MainImage from 'components/atoms/MainImage/MainImage';
 
 function App() {
   return (
     <div>
-      <PostTemplates>
-        <div>Moja wiadomość siemanko asdfoihjsdfoai sdoafnn oadfsfn</div>
-      </PostTemplates>
+      <ViewTemplates>
+        <div>
+          <MainImage />
+        </div>
+      </ViewTemplates>
     </div>
   );
 }
