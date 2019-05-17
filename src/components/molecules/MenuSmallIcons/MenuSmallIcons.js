@@ -10,6 +10,9 @@ const StyledWrapper = styled.div`
   a {
     display: block;
     flex-basis: 33.333%;
+    &:hover {
+      color: ${({ theme }) => theme.blueThird};
+    }
   }
 `;
 

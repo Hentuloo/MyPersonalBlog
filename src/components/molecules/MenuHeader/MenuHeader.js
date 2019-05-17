@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const StyledWrapper = styled.div`
   width: 100%;
   text-align: center;
+  margin: 5px 0px;
 `;
 const StyledNumber = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ const StyledBlogTitle = styled.div`
   color: ${({ theme }) => theme.blueSecondary};
   width: 100%;
   font-size: ${({ theme }) => theme.font.xs};
+  transform: translateY(-5px);
   span {
     display: block;
     color: ${({ theme }) => theme.graySecondary};
@@ -23,15 +25,17 @@ const StyledBlogTitle = styled.div`
 
 const MenuHeader = ({ number }) => {
   let myNumber = '';
-  if (number.toString().length === 1) {
-    myNumber = `00${number}`;
-  }
-  if (number.toString().length === 2) {
-    myNumber = `0${number}`;
+  if (number) {
+    if (number.toString().length === 1) {
+      myNumber = `00${number}`;
+    }
+    if (number.toString().length === 2) {
+      myNumber = `0${number}`;
+    }
   }
   return (
     <StyledWrapper>
-      <StyledNumber>#{myNumber}</StyledNumber>
+      {number && <StyledNumber>#{myNumber}</StyledNumber>}
       <StyledBlogTitle>
         Chentek w <span>działaniu</span>
       </StyledBlogTitle>
@@ -43,7 +47,7 @@ MenuHeader.propTypes = {
   number: PropTypes.number,
 };
 MenuHeader.defaultProps = {
-  number: 0,
+  number: null,
 };
 
 export default MenuHeader;

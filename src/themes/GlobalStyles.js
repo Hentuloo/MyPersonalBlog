@@ -15,5 +15,13 @@ const GlobalStyle = createGlobalStyle`
    font-family:Alegreya,sans-serif;
    font-weight:700;
    background-color: hsl(30, 6%, 93%);
-  }`;
+   margin:0px;
+  }
+    @media (min-width: 768px) {
+    html {
+   font-size:80.5%;
+  }
+  }
+  
+  `;
 export default GlobalStyle;
