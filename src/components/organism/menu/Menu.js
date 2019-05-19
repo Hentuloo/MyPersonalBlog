@@ -62,7 +62,6 @@ class Menu extends Component {
   };
 
   handleClickHamburger = () => {
-    console.log('SD');
     this.setState(prevState => {
       return { active: !prevState.active };
     });

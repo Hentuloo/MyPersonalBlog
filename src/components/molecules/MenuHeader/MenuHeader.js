@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import NumberPost from 'components/atoms/NumberPost/NumberPost';
 
 const StyledWrapper = styled.div`
   width: 100%;
   text-align: center;
   margin: 5px 0px;
 `;
-const StyledNumber = styled.div`
+const StyledNumber = styled(NumberPost)`
   width: 100%;
-  font-size: ${({ theme }) => theme.font.xl};
-  color: ${({ theme }) => theme.blueThird};
 `;
 const StyledBlogTitle = styled.div`
   color: ${({ theme }) => theme.blueSecondary};
@@ -24,25 +23,15 @@ const StyledBlogTitle = styled.div`
 `;
 
 const MenuHeader = ({ number }) => {
-  let myNumber = '';
-  if (number) {
-    if (number.toString().length === 1) {
-      myNumber = `00${number}`;
-    }
-    if (number.toString().length === 2) {
-      myNumber = `0${number}`;
-    }
-  }
   return (
     <StyledWrapper>
-      {number && <StyledNumber>#{myNumber}</StyledNumber>}
+      <StyledNumber number={number} />
       <StyledBlogTitle>
         Chentek w <span>działaniu</span>
       </StyledBlogTitle>
     </StyledWrapper>
   );
 };
-
 MenuHeader.propTypes = {
   number: PropTypes.number,
 };

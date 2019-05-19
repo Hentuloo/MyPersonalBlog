@@ -4,7 +4,7 @@ const H1 = styled.h1`
   width: 100%;
   padding: 4px 0px;
   margin: 0px;
-  font-size: 2.2rem;
+  font-size: ${({ theme, large }) => (large ? theme.font.xl : theme.font.l)};
   color: black;
   background-color: transparent;
   text-align: center;

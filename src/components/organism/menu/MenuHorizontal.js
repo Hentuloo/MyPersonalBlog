@@ -42,6 +42,7 @@ const StyledMenuWrapper = styled.div`
       opacity: 1;
     `}
   @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
+    position: relative;
     width: 100%;
     height:auto;
     opacity: 1;
@@ -52,14 +53,6 @@ const StyledMenuWrapper = styled.div`
 const StyledWrapper = styled.div`
   z-index: 100;
   position: relative;
-  body:not(&) {
-    margin-top: 60px;
-  }
-  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
-    body:not(&) {
-      margin-left: 130px;
-    }
-  }
 `;
 
 class MenuHorizontal extends Component {
