@@ -20,10 +20,11 @@ const NumberPost = ({ number, white }) => {
   return <div>{number && <StyledNumber white={white}>#{myNumber}</StyledNumber>}</div>;
 };
 NumberPost.propTypes = {
-  number: PropTypes.number.isRequired,
+  number: PropTypes.string,
   white: PropTypes.bool,
 };
 NumberPost.defaultProps = {
   white: false,
+  number: 0,
 };
 export default NumberPost;

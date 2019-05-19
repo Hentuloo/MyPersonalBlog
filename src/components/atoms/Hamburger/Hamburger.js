@@ -13,7 +13,7 @@ const HamburgerPseudoElements = styled.div`
     position: absolute;
     width: 100%;
     height: 6px;
-    background-color: ${({ theme }) => theme.blueThird};
+    background-color: ${({ theme }) => theme.bluePrimary};
     top: 0%;
     border-radius: 5px;
     transition: transform 0.2s linear;
@@ -44,7 +44,7 @@ const HamburgerWrapper = styled.div`
     position: absolute;
     width: 85%;
     height: 6px;
-    background-color: ${({ theme }) => theme.grayPrimary};
+    background-color: ${({ theme }) => theme.graySecondary};
     border-radius: 5px;
     top: 50%;
     left: 50%;

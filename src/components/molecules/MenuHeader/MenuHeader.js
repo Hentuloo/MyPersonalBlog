@@ -14,29 +14,31 @@ const StyledNumber = styled(NumberPost)`
 const StyledBlogTitle = styled.div`
   color: ${({ theme }) => theme.blueSecondary};
   width: 100%;
-  font-size: ${({ theme }) => theme.font.xs};
   transform: translateY(-5px);
+  font-size: ${({ theme, large }) => (large ? theme.font.xxl : theme.font.xs)};
   span {
     display: block;
     color: ${({ theme }) => theme.graySecondary};
   }
 `;
 
-const MenuHeader = ({ number }) => {
+const MenuHeader = ({ number, large }) => {
   return (
     <StyledWrapper>
-      <StyledNumber number={number} />
-      <StyledBlogTitle>
+      {number && <StyledNumber number={number} />}
+      <StyledBlogTitle large={large}>
         Chentek w <span>działaniu</span>
       </StyledBlogTitle>
     </StyledWrapper>
   );
 };
 MenuHeader.propTypes = {
-  number: PropTypes.number,
+  number: PropTypes.bool,
+  large: PropTypes.bool,
 };
 MenuHeader.defaultProps = {
-  number: null,
+  number: false,
+  large: false,
 };
 
 export default MenuHeader;

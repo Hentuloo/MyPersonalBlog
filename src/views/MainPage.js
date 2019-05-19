@@ -2,8 +2,8 @@ import React from 'react';
 // import PostTemplates from 'templates/PostTemplates';
 import styled from 'styled-components';
 import ViewTemplates from 'templates/ViewTemplates';
-import MainImage from 'components/atoms/MainImage/MainImage';
 import Post from 'components/molecules/Post/Post';
+import Baner from 'components/organism/Baner/Baner';
 
 const PostWrapper = styled.section`
   display: flex;
@@ -28,7 +28,7 @@ function App() {
     <div>
       <ViewTemplates>
         <div>
-          <MainImage />
+          <Baner as="header" />
           <PostWrapper>
             <Post />
             <Post />

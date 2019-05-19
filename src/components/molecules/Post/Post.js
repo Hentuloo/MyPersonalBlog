@@ -53,7 +53,7 @@ const Post = () => {
         Jak zostać maturzystą na miarę
       </Headline>
       <ImageWrapper>
-        <img src="https://unsplash.it/800/800" alt="sdf" />
+        <img src="https://unsplash.it/1400/800" alt="sdf" />
         <NumberWrapper>
           <NumberPost number="23" white />
         </NumberWrapper>
