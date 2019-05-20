@@ -28,7 +28,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 70vh;
+  height: 50vh;
   padding-top: 40px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.grayPrimary};

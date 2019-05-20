@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'themes/GlobalStyles';
 import { theme } from 'themes/mainTheme';
 import MenuHorizontal from 'components/organism/menu/MenuHorizontal';
+import Footer from 'components/organism/Footer/Footer';
 
 function PostTemplates({ children }) {
   return (
@@ -13,6 +14,7 @@ function PostTemplates({ children }) {
         <>
           <MenuHorizontal />
           <>{children}</>
+          <Footer />
         </>
       </ThemeProvider>
     </div>

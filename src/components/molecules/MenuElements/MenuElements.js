@@ -47,7 +47,7 @@ const MenuElements = ({ horizontal }) => {
         <TitleElement>Wszystkie wpisy</TitleElement>
       </ListElement>
       <ListElement as="li">
-        <i className="icon-check-1" />
+        <i className="icon-check" />
         <TitleElement>Trzy poziomy</TitleElement>
       </ListElement>
       <ListElement as="li">

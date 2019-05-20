@@ -7,7 +7,7 @@ const lorem =
 
 storiesOf('atoms/Paragraphs', module)
   .add('center', () => <Paragraph center>{lorem}</Paragraph>)
-  .add('Blue-motive', () => <Paragraph light>{lorem}</Paragraph>)
+  .add('Blue-motive', () => <Paragraph blue>{lorem}</Paragraph>)
   .add('Black-motive', () => <Paragraph black>{lorem}</Paragraph>)
   .add('Done', () => <Paragraph done>Napisana stronka</Paragraph>)
   .add('Link', () => <Paragraph link>Napisana stronka</Paragraph>);

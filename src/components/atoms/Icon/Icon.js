@@ -6,7 +6,7 @@ const Icon = styled.div`
   i {
     display: block;
     width: 100%;
-    font-size: 1.5em;
+    font-size: ${({ theme }) => theme.font.l};
   }
 `;
 export default Icon;

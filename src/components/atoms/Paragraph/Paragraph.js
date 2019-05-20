@@ -7,18 +7,22 @@ const Paragraph = styled.p`
   text-align: ${({ center }) => (center ? `center` : `left`)};
   font-weight: ${({ light, theme }) => (light ? theme.font.light : theme.font.bold)};
   text-decoration-line: ${({ done }) => (done ? `line-through` : `none`)};
+  color: ${({ theme, blackFont }) => (blackFont ? theme.black : 'white')};
   ${({ black }) =>
     black &&
     css`
       background-color: ${({ theme }) => theme.black};
-      color: white;
     `};
   ${({ link }) =>
     link &&
     css`
       text-decoration-line: underline;
       cursor: pointer;
-      color: ${({ theme }) => theme.blueThird};
+    `};
+  ${({ blue }) =>
+    blue &&
+    css`
+      background-color: ${({ theme }) => theme.bluePrimary};
     `};
 `;
 export default Paragraph;

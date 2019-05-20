@@ -4,21 +4,22 @@ const H1 = styled.h1`
   width: 100%;
   padding: 4px 0px;
   margin: 0px;
-  font-size: ${({ theme, large }) => (large ? theme.font.xl : theme.font.l)};
-  color: black;
+  color: white;
   background-color: transparent;
   text-align: center;
 
+  font-size: ${({ theme }) => theme.font.l};
+  color:  ${({ blackFont, theme }) => (blackFont ? theme.black : 'white')};
+  ${({ theme, large }) => large && `font-size:${theme.font.xl}`}
+  ${({ theme, small }) => small && `font-size:${theme.font.xs}`}
   ${({ blue }) =>
     blue &&
     css`
-      color: white;
       background-color: ${({ theme }) => theme.bluePrimary};
     `}
   ${({ black }) =>
     black &&
     css`
-      color: white;
       background-color: ${({ theme }) => theme.black};
     `}
 `;

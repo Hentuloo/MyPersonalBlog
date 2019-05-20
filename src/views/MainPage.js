@@ -10,7 +10,7 @@ const PostWrapper = styled.section`
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0px auto;
+  margin: 50px auto 70px auto;
   section {
     flex-basis: calc(100% - 6px);
     margin-bottom: 20px;

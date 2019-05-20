@@ -2,10 +2,15 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Headline from 'components/atoms/Headline/Headline';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Icon from 'components/atoms/Icon/Icon';
 import NumberPost from 'components/atoms/NumberPost/NumberPost';
 
+const StyledHeadline = styled(Headline)`
+  width: calc(100% - 8px);
+  margin: 4px;
+  padding: 4px;
+  border: 2px ${({ theme }) => theme.grayPrimary} solid;
+`;
 const NumberWrapper = styled.div`
   position: absolute;
   top: -2%;
@@ -50,7 +55,7 @@ const Post = () => {
   return (
     <PostWrapper>
       <Headline as="h2" blue>
-        Jak zostać maturzystą na miarę
+        Jak zostać maturzyscxcxcc xcxctą na miarę
       </Headline>
       <ImageWrapper>
         <img src="https://unsplash.it/1400/800" alt="sdf" />
@@ -60,15 +65,10 @@ const Post = () => {
         <Microphone className="icon-mic" />
         <span>12/12/51</span>
       </ImageWrapper>
-      <div>
-        <Headline as="h3">Czyli opowieści z rodu piekła</Headline>
-        <Paragraph black>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime ut recusandae
-          dolorum repellat reprehenderit, doloremque quasi delectus pariatur adipisci laudantium!
-          Delectus atque suscipit, quidem sunt voluptas officiis quia quasi. Exercitationem suscipit
-          error et reprehenderit eaque qui
-        </Paragraph>
-      </div>
+      <StyledHeadline as="h3" small blackFont>
+        Czyli opowieści z rodu piekła (kompletny poradnik poradnik) / oraz jak być bardziej
+        skutecznym
+      </StyledHeadline>
     </PostWrapper>
   );
 };

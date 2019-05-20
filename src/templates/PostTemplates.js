@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'themes/GlobalStyles';
 import { theme } from 'themes/mainTheme';
 import Menu from 'components/organism/menu/Menu';
+import Footer from 'components/organism/Footer/Footer';
 
 const BackgroundBlocks = styled.div`
   position: fixed;
@@ -56,6 +57,7 @@ function PostTemplates({ children }) {
           <ContentWrapper>
             <Content>{children}</Content>
           </ContentWrapper>
+          <Footer />
         </BackgroundBlocks>
       </ThemeProvider>
     </div>
