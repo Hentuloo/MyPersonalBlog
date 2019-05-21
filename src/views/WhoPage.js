@@ -1,9 +1,8 @@
 import React from 'react';
-// import PostTemplates from 'templates/PostTemplates';
+import PostTemplates from 'templates/PostTemplates';
 import styled from 'styled-components';
-import ViewTemplates from 'templates/ViewTemplates';
 import Post from 'components/molecules/Post/Post';
-import Baner from 'components/organism/Baner/Baner';
+import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 
 const PostWrapper = styled.section`
   display: flex;
@@ -26,17 +25,14 @@ const PostWrapper = styled.section`
 function App() {
   return (
     <div>
-      <ViewTemplates pageTitle="Strona główna Kamil Chędkowski" pageTitleAs="h1">
+      <PostTemplates>
+        <BanerTitle as="header" title="Kim jestem" />
         <div>
-          <Baner as="header" />
           <PostWrapper id="tresc">
-            <Post />
-            <Post />
-            <Post />
             <Post />
           </PostWrapper>
         </div>
-      </ViewTemplates>
+      </PostTemplates>
     </div>
   );
 }

@@ -28,13 +28,14 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 50vh;
+  height: 80vh;
   padding-top: 40px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.grayPrimary};
   margin-bottom: 50px;
   @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
     flex-direction: row;
+    height: 50vh;
   }
 `;
 
@@ -42,7 +43,7 @@ const Baner = () => {
   return (
     <StyledWrapper>
       <StyledHeadline>
-        <MenuHeader large as="h1" />
+        <MenuHeader large as="h2" />
       </StyledHeadline>
       <StyledImageWrapper>
         <MainImage />

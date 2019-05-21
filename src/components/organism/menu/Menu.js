@@ -46,14 +46,7 @@ const StyledMenuWrapper = styled.div`
 const StyledWrapper = styled.div`
   z-index: 100;
   position: relative;
-  body:not(&) {
-    margin-top: 60px;
-  }
-  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
-    body:not(&) {
-      margin-left: 130px;
-    }
-  }
+  margin: 130px; /* margin-left for content is in PostTemplates */
 `;
 
 class Menu extends Component {

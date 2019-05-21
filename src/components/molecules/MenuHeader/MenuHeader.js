@@ -15,7 +15,7 @@ const StyledBlogTitle = styled.div`
   color: ${({ theme }) => theme.blueSecondary};
   width: 100%;
   transform: translateY(-5px);
-  font-size: ${({ theme, large }) => (large ? theme.font.xxl : theme.font.xs)};
+  font-size: ${({ theme, large }) => (large ? theme.font.xxxl : theme.font.xs)};
   span {
     display: block;
     color: ${({ theme }) => theme.graySecondary};
