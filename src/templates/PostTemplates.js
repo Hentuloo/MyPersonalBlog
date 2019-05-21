@@ -11,6 +11,7 @@ const BackgroundBlocks = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
+  z-index: -1;
   &::before,
   &::after {
     content: '';
@@ -35,7 +36,7 @@ const Content = styled.div`
   position: relative;
   width: 90%;
   min-height: 80vh;
-  margin: 0px auto;
+  margin: 0px auto 200px auto;
   background-color: ${theme.graySecondary};
   color: black;
   z-index: 1;
@@ -55,16 +56,18 @@ function PostTemplates({ children, pageTitle, pageTitleAs }) {
     <div>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <BackgroundBlocks>
+        <>
           <BanerTitle className="focus-only" as={pageTitleAs}>
             {pageTitle}
           </BanerTitle>
+          <BackgroundBlocks />
+
           <Menu />
           <ContentWrapper>
             <Content>{children}</Content>
+            <Footer />
           </ContentWrapper>
-          <Footer />
-        </BackgroundBlocks>
+        </>
       </ThemeProvider>
     </div>
   );

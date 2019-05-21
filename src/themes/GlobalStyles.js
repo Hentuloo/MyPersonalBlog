@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
    font-weight:700;
    background-color: hsl(30, 6%, 93%);
    margin:0px;
+   overflow-x:hidden;
   }
     @media (min-width: 768px) {
     html {

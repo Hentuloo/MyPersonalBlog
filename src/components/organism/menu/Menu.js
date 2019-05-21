@@ -24,7 +24,7 @@ const StyledMenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.menuBG};
+  background-color: ${({ theme }) => theme.black};
   text-align: center;
   color: white;
   opacity:0;
@@ -46,7 +46,7 @@ const StyledMenuWrapper = styled.div`
 const StyledWrapper = styled.div`
   z-index: 100;
   position: relative;
-  margin: 130px; /* margin-left for content is in PostTemplates */
+  margin-left: 130px; /* margin-left for content is in PostTemplates */
 `;
 
 class Menu extends Component {
