@@ -1,11 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import styled, { css, keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import Headline from 'components/atoms/Headline/Headline';
 import Icon from 'components/atoms/Icon/Icon';
 import NumberPost from 'components/atoms/NumberPost/NumberPost';
 
+const rotate = keyframes`
+  0% {
+    transform:translate(-50%,-50%) rotate(0deg) ;
+  }
+ 100% {
+    transform:translate(-50%,-50%) rotate(360deg) ;
+  }
+`;
+
 const StyledHeadline = styled(Headline)`
+  flex-grow: 1;
   width: calc(100% - 8px);
   margin: 4px;
   padding: 4px;
@@ -29,7 +40,7 @@ const ImageWrapper = styled.div`
   width: 100%;
   max-width: 400px;
   max-height: 300px;
-  margin: 2px auto;
+  margin: 5px auto;
   position: relative;
   overflow: hidden;
   img {
@@ -41,7 +52,7 @@ const ImageWrapper = styled.div`
     background-color: ${({ theme }) => theme.blackAlpha};
     position: absolute;
     text-align: right;
-    bottom: 0%;
+    bottom: 3%;
     right: 0%;
     color: white;
   }
@@ -50,34 +61,82 @@ const PostWrapper = styled.section`
   display: flex;
   flex-direction: column;
   border: 4px white solid;
+  min-height: 400px;
+  a {
+    text-decoration: none;
+  }
+  ${({ disable }) =>
+    disable &&
+    css`
+      background-color: ${({ theme }) => theme.graySecondary};
+      position:relative;
+      ::after{
+        content:'';
+        position:absolute;
+        width:60px;
+        height:60px;
+        top:50%;
+        left:50%
+        border-top:5px solid ${({ theme }) => theme.bluePrimary};
+        border-bottom:5px solid ${({ theme }) => theme.bluePrimary};
+        border-left:5px solid transparent;
+        border-right:5px solid transparent;
+        border-radius:50%;
+        transform:translate(-50%,-50%);
+        animation: ${rotate} 1s ease-in-out infinite forwards;
+      }
+    `}
 `;
-const Post = () => {
+
+const Post = ({ disable, postNumber, title, description, url, podcast, data, urlPhoto }) => {
+  if (!disable) {
+    return (
+      <PostWrapper>
+        <Link to={`/${url}`}>
+          <Headline as="h2" blue>
+            {title}
+          </Headline>
+          <ImageWrapper>
+            <img src={urlPhoto} alt="sdf" />
+            <NumberWrapper>
+              <NumberPost postNumber={postNumber} white />
+            </NumberWrapper>
+            {podcast && <Microphone className="icon-mic" />}
+            <span>{[...data].slice(0, 10)}</span>
+          </ImageWrapper>
+        </Link>
+        <StyledHeadline as="h3" small blackFont>
+          {description}
+        </StyledHeadline>
+      </PostWrapper>
+    );
+  }
   return (
-    <PostWrapper>
-      <Headline as="h2" blue>
-        Jak zostać maturzyscxcxcc xcxctą na miarę
-      </Headline>
-      <ImageWrapper>
-        <img src="https://unsplash.it/1400/800" alt="sdf" />
-        <NumberWrapper>
-          <NumberPost number="23" white />
-        </NumberWrapper>
-        <Microphone className="icon-mic" />
-        <span>12/12/51</span>
-      </ImageWrapper>
-      <StyledHeadline as="h3" small blackFont>
-        Czyli opowieści z rodu piekła (kompletny poradnik poradnik) / oraz jak być bardziej
-        skutecznym
-      </StyledHeadline>
+    <PostWrapper disable>
+      <Headline as="h2">Ładowanie...</Headline>
     </PostWrapper>
   );
 };
 
-// Post.propTypes = {
-//   numberOfPost: PropTypes.number,
-// };
-// Post.defaultProps = {
-//   numberOfPost: null,
-// };
+Post.propTypes = {
+  disable: PropTypes.bool,
+  postNumber: PropTypes.number,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  podcast: PropTypes.bool,
+  urlPhoto: PropTypes.string,
+  data: PropTypes.string,
+};
+Post.defaultProps = {
+  disable: false,
+  postNumber: null,
+  title: '',
+  description: '',
+  url: '',
+  podcast: false,
+  urlPhoto: '',
+  data: '',
+};
 
 export default Post;

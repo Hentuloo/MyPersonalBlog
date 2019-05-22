@@ -7,24 +7,24 @@ const StyledNumber = styled.div`
   color: ${({ theme, white }) => (white ? 'white' : theme.blueThird)};
 `;
 
-const NumberPost = ({ number, white }) => {
+const NumberPost = ({ postNumber, white }) => {
   let myNumber = '';
-  if (number) {
-    if (number.toString().length === 1) {
-      myNumber = `00${number}`;
+  if (postNumber) {
+    if (postNumber.toString().length === 1) {
+      myNumber = `00${postNumber}`;
     }
-    if (number.toString().length === 2) {
-      myNumber = `0${number}`;
+    if (postNumber.toString().length === 2) {
+      myNumber = `0${postNumber}`;
     }
   }
-  return <div>{number && <StyledNumber white={white}>#{myNumber}</StyledNumber>}</div>;
+  return <div>{postNumber && <StyledNumber white={white}>#{myNumber}</StyledNumber>}</div>;
 };
 NumberPost.propTypes = {
-  number: PropTypes.string,
+  postNumber: PropTypes.number,
   white: PropTypes.bool,
 };
 NumberPost.defaultProps = {
   white: false,
-  number: 0,
+  postNumber: null,
 };
 export default NumberPost;
