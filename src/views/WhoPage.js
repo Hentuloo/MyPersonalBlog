@@ -1,7 +1,6 @@
 import React from 'react';
 import PostTemplates from 'templates/PostTemplates';
 import styled from 'styled-components';
-import Post from 'components/molecules/Post/Post';
 import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 
 const PostWrapper = styled.section`
@@ -26,12 +25,12 @@ function App() {
   return (
     <div>
       <PostTemplates>
-        <BanerTitle as="header" title="Kim jestem" />
-        <div>
-          <PostWrapper id="tresc">
-            <Post />
-          </PostWrapper>
-        </div>
+        <>
+          <BanerTitle as="header" title="Kim jestem" />
+          <div>
+            <PostWrapper id="tresc">Jestem kamil</PostWrapper>
+          </div>
+        </>
       </PostTemplates>
     </div>
   );

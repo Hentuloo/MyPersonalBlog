@@ -22,10 +22,10 @@ const StyledBlogTitle = styled.div`
   }
 `;
 
-const MenuHeader = ({ number, large }) => {
+const MenuHeader = ({ postNumber, large }) => {
   return (
     <StyledWrapper>
-      {number && <StyledNumber number={number} />}
+      {postNumber && <StyledNumber number={postNumber} />}
       <StyledBlogTitle large={large}>
         Chentek w <span>działaniu</span>
       </StyledBlogTitle>
@@ -33,11 +33,11 @@ const MenuHeader = ({ number, large }) => {
   );
 };
 MenuHeader.propTypes = {
-  number: PropTypes.bool,
+  postNumber: PropTypes.bool,
   large: PropTypes.bool,
 };
 MenuHeader.defaultProps = {
-  number: false,
+  postNumber: false,
   large: false,
 };
 
