@@ -57,7 +57,6 @@ const ContentWrapper = styled.div`
 `;
 
 const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent, postNumber }) => {
-  console.log(postNumber);
   return (
     <div>
       <GlobalStyle />

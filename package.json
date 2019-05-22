@@ -9,12 +9,15 @@
     "graphcms-image": "^1.1.0-beta4",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
+    "marksy": "^7.0.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
+    "react-jsx-parser": "^1.16.1",
     "react-router-dom": "^5.0.0",
     "react-router-scroll-top": "^0.1.1",
     "react-scripts": "3.0.1",
+    "react-youtube-embed": "^1.0.2",
     "styled-components": "^4.2.0"
   },
   "scripts": {
