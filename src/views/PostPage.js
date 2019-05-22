@@ -3,15 +3,48 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import GraphImg from 'graphcms-image';
 
 import PostTemplates from 'templates/PostTemplates';
+import Headline from 'components/atoms/Headline/Headline';
 
-import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 import PostContentBlock from 'components/organism/PostContentBlock/PostContentBlock';
 
-const ImageBlock = styled.div``;
+const ImageWrapper = styled.div`
+  position: relative;
+  max-width: 1100px;
+  margin: 0px auto;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    box-shadow: 0px 0px 250px 34px rgba(0, 0, 0, 0.81);
+  }
+  h1 {
+    position: absolute;
+    top: 0%;
+    opacity: 0.8;
+    z-index: 4;
+    transition: opacity 0.6s ease-in-out;
+  }
+  &:hover {
+    h1 {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+`;
 const ContentWrapper = styled.div`
   width: 100%;
+  max-width: 1100px;
+  margin: 0px auto;
   min-height: 500px;
   background-color: ${({ theme }) => theme.graySecondary};
   p {
@@ -20,26 +53,38 @@ const ContentWrapper = styled.div`
 `;
 
 function PostPage({ data: { posts } }) {
-  const content = posts ? (
-    <PostContentBlock
-      title={posts[0].title}
-      description={posts[0].description}
-      url={posts[0].url}
-      content={posts[0].content}
-    />
-  ) : (
-    <div>DSSS</div>
-  );
-  return (
-    <div>
-      <PostTemplates transparentContent>
+  if (posts) {
+    const { postNumber, title, secondTitle: description, url, content, photo } = posts[0];
+
+    return (
+      <PostTemplates transparentContent postNumber={postNumber} pageTitle={title}>
         <>
-          <BanerTitle as="header" title="Kim jestem" />
-          {posts && <ImageBlock />}
-          <ContentWrapper>{content}</ContentWrapper>
+          {posts && (
+            <ImageWrapper>
+              <Headline as="h1" black>
+                {title}
+              </Headline>
+              <GraphImg image={photo} maxWidth={1200} />
+            </ImageWrapper>
+          )}
+          <ContentWrapper>
+            {
+              <PostContentBlock
+                title={title}
+                description={description}
+                url={url}
+                content={content}
+              />
+            }
+          </ContentWrapper>
         </>
       </PostTemplates>
-    </div>
+    );
+  }
+  return (
+    <PostTemplates transparentContent>
+      <ContentWrapper>Ładowanie</ContentWrapper>
+    </PostTemplates>
   );
 }
 
@@ -50,8 +95,6 @@ export const singlePost = gql`
       title
       secondTitle
       url
-      podcast
-      data
       content
       photo {
         url

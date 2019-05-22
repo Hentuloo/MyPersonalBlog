@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
+// import Headline from 'components/atoms/Headline/Headline';
 
 const Post = ({ description, url, content }) => {
   return (

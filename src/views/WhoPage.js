@@ -1,7 +1,6 @@
 import React from 'react';
 import PostTemplates from 'templates/PostTemplates';
 import styled from 'styled-components';
-import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 
 const PostWrapper = styled.section`
   display: flex;
@@ -24,9 +23,8 @@ const PostWrapper = styled.section`
 function App() {
   return (
     <div>
-      <PostTemplates>
+      <PostTemplates pageTitle="Kim jestem">
         <>
-          <BanerTitle as="header" title="Kim jestem" />
           <div>
             <PostWrapper id="tresc">Jestem kamil</PostWrapper>
           </div>

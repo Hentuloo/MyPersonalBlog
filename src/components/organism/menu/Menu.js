@@ -61,14 +61,14 @@ class Menu extends Component {
   };
 
   render() {
-    const { numberOfPost } = this.props;
+    const { postNumber } = this.props;
     const { active } = this.state;
     return (
       <StyledWrapper active={!!active}>
         <StyledMenuWrapper active={!!active}>
           <div>
             <>
-              <MenuHeader number={numberOfPost} />
+              <MenuHeader postNumber={postNumber} />
             </>
             <>
               <MenuElements />
@@ -91,10 +91,10 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
-  numberOfPost: PropTypes.number,
+  postNumber: PropTypes.number,
 };
 Menu.defaultProps = {
-  numberOfPost: null,
+  postNumber: null,
 };
 
 export default Menu;

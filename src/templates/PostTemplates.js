@@ -56,7 +56,8 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent }) => {
+const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent, postNumber }) => {
+  console.log(postNumber);
   return (
     <div>
       <GlobalStyle />
@@ -67,7 +68,7 @@ const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent })
           </BanerTitle>
           <BackgroundBlocks />
 
-          <Menu />
+          <Menu postNumber={postNumber} />
           <ContentWrapper>
             <Content transparentContent={transparentContent}>{children}</Content>
             <Footer />
@@ -83,11 +84,13 @@ PostTemplates.propTypes = {
   pageTitle: PropTypes.string,
   pageTitleAs: PropTypes.string,
   transparentContent: PropTypes.bool,
+  postNumber: PropTypes.number,
 };
 
 PostTemplates.defaultProps = {
   pageTitle: 'Kamil Chędkowski',
   pageTitleAs: 'header',
   transparentContent: false,
+  postNumber: null,
 };
 export default PostTemplates;

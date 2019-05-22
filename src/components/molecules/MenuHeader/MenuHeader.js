@@ -25,7 +25,7 @@ const StyledBlogTitle = styled.div`
 const MenuHeader = ({ postNumber, large }) => {
   return (
     <StyledWrapper>
-      {postNumber && <StyledNumber number={postNumber} />}
+      {postNumber && <StyledNumber postNumber={postNumber} />}
       <StyledBlogTitle large={large}>
         Chentek w <span>działaniu</span>
       </StyledBlogTitle>
@@ -33,11 +33,11 @@ const MenuHeader = ({ postNumber, large }) => {
   );
 };
 MenuHeader.propTypes = {
-  postNumber: PropTypes.bool,
+  postNumber: PropTypes.number,
   large: PropTypes.bool,
 };
 MenuHeader.defaultProps = {
-  postNumber: false,
+  postNumber: null,
   large: false,
 };
 
