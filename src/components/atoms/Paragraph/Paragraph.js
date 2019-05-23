@@ -24,5 +24,20 @@ const Paragraph = styled.p`
     css`
       background-color: ${({ theme }) => theme.bluePrimary};
     `};
+  ${({ blockquote }) =>
+    blockquote &&
+    css`
+      position: relative;
+      i {
+        content: "''";
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        opacity: 0.4;
+        color: ${({ theme }) => theme.blueSecondary};
+        line-height: ${({ theme }) => theme.font.xxl};
+        font-size: ${({ theme }) => theme.font.xxl};
+      }
+    `};
 `;
 export default Paragraph;

@@ -85,7 +85,7 @@ const MainPage = ({ data: { posts } }) => {
 
 const LastPosts = gql`
   query Post($first: Int!) {
-    posts(orderBy: index_DESC, first: $first, skip: 0) {
+    posts(where: { status: PUBLISHED }, orderBy: index_DESC, first: $first, skip: 0) {
       id
       postNumber
       title

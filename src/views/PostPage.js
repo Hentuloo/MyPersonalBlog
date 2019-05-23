@@ -92,10 +92,12 @@ export const singlePost = gql`
   query Post($url: String!) {
     posts(where: { url: $url }) {
       postNumber
+      content
       title
       secondTitle
       url
-      content
+      podcast
+      data
       photo {
         url
         handle
