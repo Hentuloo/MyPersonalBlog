@@ -1,5 +1,4 @@
 import React from 'react';
-// import PostTemplates from 'templates/PostTemplates';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
@@ -57,7 +56,7 @@ const request = (posts = false) => {
         />
       );
     });
-    return RequestPosts;
+    return RequestPosts.slice(0, 4);
   }
   // if (error) return <div>Błąd</div>;
   return (
