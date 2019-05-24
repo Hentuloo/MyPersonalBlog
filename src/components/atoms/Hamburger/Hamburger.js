@@ -44,7 +44,7 @@ const HamburgerWrapper = styled.div`
     position: absolute;
     width: 85%;
     height: 6px;
-    background-color: ${({ theme }) => theme.graySecondary};
+    background-color: ${({ theme }) => theme.grayThird};
     border-radius: 5px;
     top: 50%;
     left: 50%;

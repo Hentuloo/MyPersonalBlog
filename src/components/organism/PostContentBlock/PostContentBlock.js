@@ -23,7 +23,8 @@ const ParagraphQuote = styled(Paragraph)`
 `;
 const ContentChildren = styled(Paragraph)`
   margin: 15px 15px;
-  color: ${({ theme }) => theme.black};
+  color: black;
+  font-weight: ${({ theme }) => theme.font.light};
 `;
 const ParagraphLink = styled(Paragraph)`
   padding: 2px 6px;

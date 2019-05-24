@@ -34,7 +34,7 @@ const BackgroundBlocks = styled.div`
 `;
 const Content = styled.div`
   position: relative;
-  width: 90%;
+  width: 97%;
   min-height: 80vh;
   margin: 0px auto 200px auto;
   background-color: ${theme.graySecondary};
@@ -45,6 +45,9 @@ const Content = styled.div`
     css`
       background-color: transparent;
     `}
+    @media (min-width: ${theme.breakPointMobile}) {
+       width: 90%;
+    }
 `;
 const ContentWrapper = styled.div`
   position: relative;

@@ -9,7 +9,12 @@ import PostTemplates from 'templates/PostTemplates';
 import Headline from 'components/atoms/Headline/Headline';
 
 import PostContentBlock from 'components/organism/PostContentBlock/PostContentBlock';
+import TheBestPosts from 'components/organism/TheBestPosts/TheBestPosts';
 
+const StyledBestPostsWrapper = styled.section`
+  margin-top: 100px;
+  background-color: ${({ theme }) => theme.graySecondary};
+`;
 const ImageWrapper = styled.div`
   position: relative;
   max-width: 1100px;
@@ -52,7 +57,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-function PostPage({ data: { posts } }) {
+function PostPage({ data: { posts, BestPosts } }) {
   if (posts) {
     const { postNumber, title, secondTitle: description, url, content, photo } = posts[0];
 
@@ -77,6 +82,10 @@ function PostPage({ data: { posts } }) {
               />
             }
           </ContentWrapper>
+          <StyledBestPostsWrapper>
+            <Headline black>Najpopularniejsze wpisy</Headline>
+            <TheBestPosts as="section" BestPosts={BestPosts} />
+          </StyledBestPostsWrapper>
         </>
       </PostTemplates>
     );
@@ -89,10 +98,25 @@ function PostPage({ data: { posts } }) {
 }
 
 export const singlePost = gql`
-  query Post($url: String!) {
+  query($url: String!, $first: Int!) {
     posts(where: { url: $url }) {
       postNumber
       content
+      title
+      secondTitle
+      url
+      podcast
+      data
+      photo {
+        url
+        handle
+        width
+        height
+      }
+    }
+    BestPosts: posts(where: { status: PUBLISHED }, orderBy: index_DESC, first: $first, skip: 0) {
+      id
+      postNumber
       title
       secondTitle
       url
@@ -119,6 +143,7 @@ export default graphql(singlePost, {
     return {
       variables: {
         url: match.params.postTitle,
+        first: 20,
       },
     };
   },

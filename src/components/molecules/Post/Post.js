@@ -61,7 +61,7 @@ const PostWrapper = styled.section`
   display: flex;
   flex-direction: column;
   border: 4px white solid;
-  min-height: 400px;
+  min-height: 0px;
   a {
     text-decoration: none;
   }
