@@ -6,6 +6,7 @@ import { theme } from 'themes/mainTheme';
 import Menu from 'components/organism/menu/Menu';
 import Footer from 'components/organism/Footer/Footer';
 import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
+import HelmetSEO from 'components/organism/HelmetSEO/HelmetSEO';
 
 const BackgroundBlocks = styled.div`
   position: fixed;
@@ -59,9 +60,22 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent, postNumber }) => {
+const PostTemplates = ({
+  contentPageSEO,
+  keywordsSEO,
+  children,
+  pageTitle,
+  pageTitleAs,
+  transparentContent,
+  postNumber,
+}) => {
   return (
     <div>
+      <HelmetSEO
+        titlePageSEO={pageTitle}
+        contentPageSEO={contentPageSEO}
+        keywordsSEO={keywordsSEO}
+      />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <>
@@ -82,6 +96,8 @@ const PostTemplates = ({ children, pageTitle, pageTitleAs, transparentContent, p
 };
 
 PostTemplates.propTypes = {
+  contentPageSEO: PropTypes.string,
+  keywordsSEO: PropTypes.string,
   children: PropTypes.element.isRequired,
   pageTitle: PropTypes.string,
   pageTitleAs: PropTypes.string,
@@ -90,6 +106,8 @@ PostTemplates.propTypes = {
 };
 
 PostTemplates.defaultProps = {
+  contentPageSEO: null,
+  keywordsSEO: null,
   pageTitle: 'Kamil Chędkowski',
   pageTitleAs: 'header',
   transparentContent: false,

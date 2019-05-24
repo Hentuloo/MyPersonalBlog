@@ -59,10 +59,16 @@ const ContentWrapper = styled.div`
 
 function PostPage({ data: { posts, BestPosts } }) {
   if (posts) {
-    const { postNumber, title, secondTitle: description, url, content, photo } = posts[0];
+    const { postNumber, title, secondTitle: description, url, content, photo, keywords } = posts[0];
 
     return (
-      <PostTemplates transparentContent postNumber={postNumber} pageTitle={title}>
+      <PostTemplates
+        transparentContent
+        contentPageSEO={description}
+        keywordsSEO={keywords}
+        postNumber={postNumber}
+        pageTitle={title}
+      >
         <>
           {posts && (
             <ImageWrapper>
@@ -101,6 +107,7 @@ export const singlePost = gql`
   query($url: String!, $first: Int!) {
     posts(where: { url: $url }) {
       postNumber
+      keywords
       content
       title
       secondTitle

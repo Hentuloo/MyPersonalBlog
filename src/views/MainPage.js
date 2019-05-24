@@ -73,7 +73,13 @@ const request = (posts = false) => {
 const MainPage = ({ data: { posts } }) => {
   return (
     <div>
-      <ViewTemplates pageTitle="Strona główna Kamil Chędkowski" pageTitleAs="h1">
+      <ViewTemplates
+        titlePageSEO="Strona główna Kamil Chędkowski"
+        contentPageSEO="Blog o zwiększaniu władzy nad sobą"
+        keywordsSEO="chentek w dzialaniu wladza produktywnosc skutecznosc korzyść"
+        pageTitle="Strona główna Kamil Chędkowski"
+        pageTitleAs="h1"
+      >
         <div>
           <Baner as="header" />
           <PostWrapper id="tresc">{request(posts)}</PostWrapper>

@@ -6,10 +6,23 @@ import { theme } from 'themes/mainTheme';
 import MenuHorizontal from 'components/organism/menu/MenuHorizontal';
 import Footer from 'components/organism/Footer/Footer';
 import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
+import HelmetSEO from 'components/organism/HelmetSEO/HelmetSEO';
 
-function PostTemplates({ children, pageTitle, pageTitleAs }) {
+function ViewTemplates({
+  children,
+  pageTitle,
+  pageTitleAs,
+  titlePageSEO,
+  contentPageSEO,
+  keywordsSEO,
+}) {
   return (
     <div>
+      <HelmetSEO
+        titlePageSEO={titlePageSEO}
+        contentPageSEO={contentPageSEO}
+        keywordsSEO={keywordsSEO}
+      />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <>
@@ -25,14 +38,20 @@ function PostTemplates({ children, pageTitle, pageTitleAs }) {
   );
 }
 
-PostTemplates.propTypes = {
+ViewTemplates.propTypes = {
   children: PropTypes.element.isRequired,
   pageTitle: PropTypes.string,
   pageTitleAs: PropTypes.string,
+  titlePageSEO: PropTypes.string,
+  contentPageSEO: PropTypes.string,
+  keywordsSEO: PropTypes.string,
 };
 
-PostTemplates.defaultProps = {
+ViewTemplates.defaultProps = {
   pageTitle: 'Kamil Chędkowski',
   pageTitleAs: 'header',
+  titlePageSEO: null,
+  contentPageSEO: null,
+  keywordsSEO: null,
 };
-export default PostTemplates;
+export default ViewTemplates;

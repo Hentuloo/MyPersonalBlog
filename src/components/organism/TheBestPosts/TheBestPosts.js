@@ -70,7 +70,7 @@ const TheBestPosts = ({ BestPosts }) => {
 };
 
 TheBestPosts.propTypes = {
-  BestPosts: PropTypes.objectOf(Object),
+  BestPosts: PropTypes.arrayOf(Object),
 };
 TheBestPosts.defaultProps = {
   BestPosts: null,
