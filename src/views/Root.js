@@ -6,6 +6,7 @@ import MainPage from './MainPage';
 import WhoPage from './WhoPage';
 import PostPage from './PostPage';
 import AllPostsPage from './AllPostsPage';
+import SearchPage from './SearchPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/" component={MainPage} />
           <Route exact path="/kim-jestem" component={WhoPage} />
           <Route exact path="/wszystkie-wpisy" component={AllPostsPage} />
+          <Route path="/szukaj/:like" component={SearchPage} />
           <Route path="/:postTitle" component={PostPage} />
         </Switch>
       </ScrollToTop>

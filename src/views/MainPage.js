@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import ViewTemplates from 'templates/ViewTemplates';
-import Post from 'components/molecules/Post/Post';
+import MultiPostsCreator from 'components/molecules/Post/MultiPostsCreator';
 import Baner from 'components/organism/Baner/Baner';
 
 const POSTS_COUNTER = 4;
@@ -30,44 +30,6 @@ const PostWrapper = styled.section`
     }
   }
 `;
-const request = (posts = false) => {
-  if (posts) {
-    const RequestPosts = posts.map(post => {
-      const {
-        id,
-        postNumber,
-        title,
-        secondTitle,
-        url,
-        podcast,
-        data,
-        photo: { url: urlPhoto },
-      } = post;
-      return (
-        <Post
-          key={id}
-          title={title}
-          description={secondTitle}
-          postNumber={postNumber}
-          url={url}
-          urlPhoto={urlPhoto}
-          podcast={podcast}
-          data={data}
-        />
-      );
-    });
-    return RequestPosts.slice(0, 4);
-  }
-  // if (error) return <div>Błąd</div>;
-  return (
-    <>
-      <Post disable />
-      <Post disable />
-      <Post disable />
-      <Post disable />
-    </>
-  );
-};
 
 const MainPage = ({ data: { posts } }) => {
   return (
@@ -81,7 +43,7 @@ const MainPage = ({ data: { posts } }) => {
       >
         <div>
           <Baner as="header" />
-          <PostWrapper id="tresc">{request(posts)}</PostWrapper>
+          <PostWrapper id="tresc">{<MultiPostsCreator posts={posts} />}</PostWrapper>
         </div>
       </ViewTemplates>
     </div>
