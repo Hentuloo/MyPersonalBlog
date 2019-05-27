@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import styled from 'styled-components';
+import GraphImg from 'graphcms-image';
+import PropTypes from 'prop-types';
+import marksy from 'marksy';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
+const ParagraphLink = styled.a`
+  padding: 2px 6px;
+  margin: 0px 6px;
+  color: white;
+`;
 const Content = styled(Paragraph)`
   padding: 4px 10px;
   font-size: ${({ theme }) => theme.font.s};
@@ -10,29 +18,18 @@ const Content = styled(Paragraph)`
   position: relative;
   z-index: 11;
 `;
-const ContentWithLink = styled(Paragraph)`
-  position: relative;
-  margin: 4px 20px;
-  padding-right: 100px;
-  background-color: ${({ theme }) => theme.graySecondary};
-`;
 
-const ImageWrapper = styled.div`
+const StyledImageWrapper = styled.div`
   position: absolute;
   right: 1%;
-  max-width: 120px;
-  max-height: 160px;
   top: 0%;
+  transform: translateY(10%);
+`;
+const StyledGraphImage = styled(GraphImg)`
+  position: absolute;
+  width: 120px;
+  max-height: 200px;
   border: white 4px solid;
-  overflow: hidden;
-  z-index: 10;
-  img {
-    max-width: 100%;
-  }
-  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
-    top: 40%;
-    transform: translateY(-50%);
-  }
 `;
 
 const SecondTitle = styled(Paragraph)`
@@ -62,31 +59,55 @@ const BookWrapper = styled.section`
   border-radius: 2%;
   position: relative;
   background-color: ${({ theme }) => theme.graySecondary};
-  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
-    padding-right: 130px;
-  }
 `;
-const BookElement = () => {
+const BookElement = ({ data }) => {
+  console.log(data.photo);
+  let ParsedContent;
+  if (data.description) {
+    const compile = marksy({
+      createElement,
+      elements: {
+        p({ children }) {
+          return <Content blackFont>{children}</Content>;
+        },
+        ul({ children }) {
+          return <Content as="ul">{children}</Content>;
+        },
+        a({ href, children }) {
+          return (
+            <ParagraphLink as="a" black link href={href}>
+              {children}
+            </ParagraphLink>
+          );
+        },
+      },
+    });
+    const compiled = compile(data.description);
+    ParsedContent = compiled.tree;
+  }
   return (
     <BookWrapper>
-      <Title>Stoicyzm</Title>
+      <Title>{data.kind}</Title>
       <SecondTitle as="h3" black center>
-        Sztuka życia według stoików - Piotr Stankiewicz
+        {data.title}
       </SecondTitle>
-      <ImageWrapper>
-        <img src="https://unsplash.it/120/200" alt="my imge" />
-      </ImageWrapper>
-
-      <ContentWithLink as="ul">
-        <li>Mam ciągle wyobrażenia!!!</li>
-        <li>Mam ciągle wyobrażenia!!!</li>
-        <li>Mam ciągle wyobrażenia!!!</li>
-      </ContentWithLink>
-      <Content blackFont>
-        Gdy uważasz, że wszystko wokół jest przeciwko tobie. Gdy przemawiają do ciebie stoickie
-        cytaty a masz ochotę na więcej (Tak było u mnie). Książka w trakcie czytania
-      </Content>
+      <StyledImageWrapper>
+        <StyledGraphImage image={data.photo} maxWidth={200} alt={data.title} />
+      </StyledImageWrapper>
+      <>{ParsedContent}</>
     </BookWrapper>
   );
+};
+BookElement.propTypes = {
+  data: PropTypes.objectOf(Object),
+  // eslint-disable-next-line react/no-unused-prop-types
+  href: PropTypes.string,
+  // eslint-disable-next-line react/no-unused-prop-types
+  children: PropTypes.objectOf(Object),
+};
+BookElement.defaultProps = {
+  data: null,
+  children: null,
+  href: '#',
 };
 export default BookElement;

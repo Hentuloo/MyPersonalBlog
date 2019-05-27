@@ -75,7 +75,7 @@ function PostPage({ data: { posts, BestPosts } }) {
               <Headline as="h1" black>
                 {title}
               </Headline>
-              <GraphImg image={photo} maxWidth={1200} />
+              <GraphImg image={photo} maxWidth={1200} alt={`Obrazek dotyczący: ${title}`} />
             </ImageWrapper>
           )}
           <ContentWrapper>
