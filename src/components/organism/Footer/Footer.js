@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Search from 'components/atoms/Input/Search';
 import Headline from 'components/atoms/Headline/Headline';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Icon from 'components/atoms/Icon/Icon';
 
+const ParagraphLink = styled(Link)`
+  color: white;
+  text-decoration-line: underline;
+  font-weight: ${({ theme }) => theme.font.light};
+  cursor: pointer;
+`;
 const StyledCopyrights = styled.div`
   flex-basis: 100%;
 `;
@@ -64,12 +71,12 @@ const Footer = () => {
       <StyledSecondWrapper>
         <Headline as="h3">Email: szyszaqaz@o2.pl</Headline>
         <Headline as="h4">Przydatne Linki:</Headline>
-        <Paragraph as="a" link white light>
+        <ParagraphLink as={Link} to="/wszystkie-wpisy">
           Wszystkie wpisy
-        </Paragraph>
-        <Paragraph as="a" link white light>
-          Polityka prywatności
-        </Paragraph>
+        </ParagraphLink>
+        <ParagraphLink as={Link} to="/regulamin">
+          Polityka prywatności i regulamin
+        </ParagraphLink>
         <Paragraph as="a" link white light>
           Jako programista (portfolio)
         </Paragraph>

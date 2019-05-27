@@ -49,7 +49,7 @@ function BooksPage({ data: { bookses } }) {
           </Paragraph>
           {<BooksWrapper>{booksElements}</BooksWrapper> || (
             <Headline center black>
-              ładowanie
+              KSIĄŻKI: ładowanie
             </Headline>
           )}
         </div>

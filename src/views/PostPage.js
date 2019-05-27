@@ -98,7 +98,7 @@ function PostPage({ data: { posts, BestPosts } }) {
   }
   return (
     <PostTemplates transparentContent>
-      <ContentWrapper>Ładowanie</ContentWrapper>
+      <Headline black>Ładowanie</Headline>
     </PostTemplates>
   );
 }

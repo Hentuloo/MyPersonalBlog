@@ -104,7 +104,9 @@ function WhoPage({ data: { whoPages: data } }) {
       keywordsSEO="Kim jest Kamil Chędkowski"
       pageTitle="Kim jest Kamil Chędkowski"
     >
-      <>ładowanie</>
+      <Headline center black>
+        Kim jestem?: ładowanie
+      </Headline>
     </PostTemplates>
   );
 }

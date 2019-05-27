@@ -1,5 +1,5 @@
 import React, { createElement } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import GraphImg from 'graphcms-image';
 import PropTypes from 'prop-types';
 import marksy from 'marksy';
@@ -17,6 +17,11 @@ const Content = styled(Paragraph)`
   word-spacing: 4px;
   position: relative;
   z-index: 11;
+  ${({ ulMargin }) =>
+    ulMargin &&
+    css`
+      margin-left: 28px;
+    `}
 `;
 
 const StyledImageWrapper = styled.div`
@@ -61,7 +66,6 @@ const BookWrapper = styled.section`
   background-color: ${({ theme }) => theme.graySecondary};
 `;
 const BookElement = ({ data }) => {
-  console.log(data.photo);
   let ParsedContent;
   if (data.description) {
     const compile = marksy({
@@ -71,7 +75,11 @@ const BookElement = ({ data }) => {
           return <Content blackFont>{children}</Content>;
         },
         ul({ children }) {
-          return <Content as="ul">{children}</Content>;
+          return (
+            <Content as="ul" ulMargin>
+              {children}
+            </Content>
+          );
         },
         a({ href, children }) {
           return (

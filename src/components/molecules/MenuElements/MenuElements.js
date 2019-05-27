@@ -12,7 +12,7 @@ const ListElement = styled(Icon)`
 
   &:hover {
     transform: translateY(4px);
-    color: ${({ theme }) => theme.blueThird};
+    color: ${({ theme }) => theme.blueSecondary};
   }
   a {
     text-decoration: none;
