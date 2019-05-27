@@ -9,4 +9,7 @@ storiesOf('atoms/headlines', module)
     <H1 black large>
       drugi stopień
     </H1>
-  ));
+  ))
+  .add('blackFont', () => <H1 blackFont>drugi stopień</H1>)
+  .add('small-Font', () => <H1 small>drugi stopień</H1>)
+  .add('large-font', () => <H1 large>drugi stopień</H1>);

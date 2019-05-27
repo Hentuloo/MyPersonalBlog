@@ -60,7 +60,6 @@ const ContentWrapper = styled.div`
 function PostPage({ data: { posts, BestPosts } }) {
   if (posts) {
     const { postNumber, title, secondTitle: description, url, content, photo, keywords } = posts[0];
-
     return (
       <PostTemplates
         transparentContent
@@ -115,7 +114,6 @@ export const singlePost = gql`
       podcast
       data
       photo {
-        url
         handle
         width
         height
@@ -130,7 +128,6 @@ export const singlePost = gql`
       podcast
       data
       photo {
-        url
         handle
         width
         height

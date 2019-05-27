@@ -2,7 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import BookElement from './BookElement';
 
-storiesOf('molecules/BookElement', module)
-  .add('Basic', () => <BookElement />)
-  .add('Blue', () => <BookElement>drugi stopień</BookElement>)
-  .add('Black', () => <BookElement />);
+const data = {
+  kind: 'Stoicyzm',
+  title: 'Jakiś twórca',
+  description: 'Description',
+  photo: {
+    handle: '',
+    width: '',
+    height: '',
+  },
+};
+
+storiesOf('molecules', module).add('BookElement', () => <BookElement data={data} />);

@@ -10,6 +10,8 @@ storiesOf('atoms/Paragraphs', module)
   .add('Blue-motive', () => <Paragraph blue>{lorem}</Paragraph>)
   .add('Black-motive', () => <Paragraph black>{lorem}</Paragraph>)
   .add('Done', () => <Paragraph done>Napisana stronka</Paragraph>)
+  .add('light', () => <Paragraph light>Napisana stronka</Paragraph>)
+  .add('blackFont', () => <Paragraph blackFont>Napisana stronka</Paragraph>)
   .add('blockquote', () => (
     <Paragraph black blockquote>
       Napisana stronka Napisana stronka Napisana stronka

@@ -61,7 +61,6 @@ const LastPosts = gql`
       podcast
       data
       photo {
-        url
         handle
         width
         height

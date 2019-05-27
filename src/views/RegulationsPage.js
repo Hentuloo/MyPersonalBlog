@@ -10,7 +10,7 @@ import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Headline from 'components/atoms/Headline/Headline';
 
 const ContentWrapper = styled.div`
-  h2:nth-of-type(2n) {
+  div:nth-of-type(2n) h2 {
     background-color: ${({ theme }) => theme.bluePrimary};
   }
   p {

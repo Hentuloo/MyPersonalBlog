@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GraphImg from 'graphcms-image';
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Headline from 'components/atoms/Headline/Headline';
@@ -88,7 +89,7 @@ const PostWrapper = styled.section`
     `}
 `;
 
-const Post = ({ disable, postNumber, title, description, url, podcast, data, urlPhoto }) => {
+const Post = ({ disable, postNumber, title, description, url, podcast, data, photo }) => {
   if (!disable) {
     return (
       <PostWrapper>
@@ -97,7 +98,7 @@ const Post = ({ disable, postNumber, title, description, url, podcast, data, url
             {title}
           </Headline>
           <ImageWrapper>
-            <img src={urlPhoto} alt="sdf" />
+            <GraphImg image={photo} maxWidth={400} alt={title} />
             <NumberWrapper>
               <NumberPost postNumber={postNumber} white />
             </NumberWrapper>
@@ -125,7 +126,7 @@ Post.propTypes = {
   description: PropTypes.string,
   url: PropTypes.string,
   podcast: PropTypes.bool,
-  urlPhoto: PropTypes.string,
+  photo: PropTypes.objectOf(Object),
   data: PropTypes.string,
 };
 Post.defaultProps = {
@@ -135,7 +136,11 @@ Post.defaultProps = {
   description: '',
   url: '',
   podcast: false,
-  urlPhoto: '',
+  photo: {
+    handle: '',
+    width: '',
+    height: '',
+  },
   data: '',
 };
 

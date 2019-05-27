@@ -37,16 +37,7 @@ const requestRandom = (posts = false) => {
       propPosts.splice(randomNumber, 1);
     }
     return postsElements.map(post => {
-      const {
-        id,
-        postNumber,
-        title,
-        secondTitle,
-        url,
-        podcast,
-        data,
-        photo: { url: urlPhoto },
-      } = post;
+      const { id, postNumber, title, secondTitle, url, podcast, data, photo } = post;
       return (
         <Post
           key={id}
@@ -54,7 +45,7 @@ const requestRandom = (posts = false) => {
           description={secondTitle}
           postNumber={postNumber}
           url={url}
-          urlPhoto={urlPhoto}
+          photo={photo}
           podcast={podcast}
           data={data}
         />

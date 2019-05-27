@@ -4,16 +4,7 @@ import Post from 'components/molecules/Post/Post';
 const request = (posts = false) => {
   if (posts) {
     const RequestPosts = posts.map(post => {
-      const {
-        id,
-        postNumber,
-        title,
-        secondTitle,
-        url,
-        podcast,
-        data,
-        photo: { url: urlPhoto },
-      } = post;
+      const { id, postNumber, title, secondTitle, url, podcast, data, photo } = post;
       return (
         <Post
           key={id}
@@ -21,7 +12,7 @@ const request = (posts = false) => {
           description={secondTitle}
           postNumber={postNumber}
           url={url}
-          urlPhoto={urlPhoto}
+          photo={photo}
           podcast={podcast}
           data={data}
         />
