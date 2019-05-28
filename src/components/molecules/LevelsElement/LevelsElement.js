@@ -90,7 +90,7 @@ const levels = element => {
           {parseMarkdow(element.levelTitle[n])}
         </LevelTitle>
         <LevelTime center black as="em">
-          {element.data[n].slice(0, 10)}
+          {element.data[n].slice(0, 4) === '1111' ? '~~~~' : element.data[n].slice(0, 10)}
           {element.done[n] && <i className="icon-crown" />}
         </LevelTime>
       </Level>,

@@ -9,6 +9,7 @@ import AllPostsPage from './AllPostsPage';
 import SearchPage from './SearchPage';
 import BooksPage from './BooksPage';
 import RegulationsPage from './RegulationsPage';
+import LevelsPage from './LevelsPage';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route exact path="/kim-jestem" component={WhoPage} />
           <Route exact path="/wszystkie-wpisy" component={AllPostsPage} />
           <Route exact path="/ksiazki" component={BooksPage} />
-          <Route exact path="/Regulamin" component={RegulationsPage} />
+          <Route exact path="/regulamin" component={RegulationsPage} />
+          <Route exact path="/trzy-poziomy" component={LevelsPage} />
           <Route path="/szukaj/:like" component={SearchPage} />
           <Route path="/:postTitle" component={PostPage} />
         </Switch>
