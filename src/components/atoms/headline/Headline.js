@@ -22,5 +22,10 @@ const H1 = styled.h1`
     css`
       background-color: ${({ theme }) => theme.black};
     `}
+     ${({ gray }) =>
+       gray &&
+       css`
+         background-color: ${({ theme }) => theme.grayThird};
+       `}
 `;
 export default H1;

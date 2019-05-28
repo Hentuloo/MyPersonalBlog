@@ -83,7 +83,7 @@ const SearchPage = ({ data: { content, titles, loading } }) => {
 
 export const singlePost = gql`
   query Post($like: String!) {
-    content: posts(where: { content_contains: $like, status: PUBLISHED }) {
+    content: posts(where: { content_contains: $like, status: PUBLISHED, orderBy: index_DESC }) {
       id
       postNumber
       title
@@ -98,7 +98,7 @@ export const singlePost = gql`
         height
       }
     }
-    titles: posts(where: { title_contains: $like, status: PUBLISHED }) {
+    titles: posts(where: { title_contains: $like, status: PUBLISHED, orderBy: index_DESC }) {
       id
       postNumber
       title

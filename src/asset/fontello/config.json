@@ -101,6 +101,18 @@
       "css": "mic",
       "code": 61744,
       "src": "fontawesome"
+    },
+    {
+      "uid": "186dec7a13156bbe2550790c158fb85d",
+      "css": "crown",
+      "code": 59460,
+      "src": "fontelico"
+    },
+    {
+      "uid": "ce50292e85eb5d6ee3be61b32bf2bdf3",
+      "css": "ok",
+      "code": 59401,
+      "src": "mfglabs"
     }
   ]
 }
