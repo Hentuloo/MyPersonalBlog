@@ -11,6 +11,9 @@ import Headline from 'components/atoms/Headline/Headline';
 
 const ThirdHeadline = styled(Headline)`
   font-size: ${({ theme }) => theme.font.s};
+  &:nth-of-type(2n) {
+    background-color: ${({ theme }) => theme.black};
+  }
 `;
 const ListWrapper = styled.ul`
   list-style: none;
@@ -89,9 +92,9 @@ function WhoPage({ data: { whoPages: data } }) {
     return (
       <div>
         <PostTemplates
-          contentPageSEO="Kim jestem podstrona"
-          keywordsSEO="Kim jest Kamil Chędkowski"
-          pageTitle="Kim jest Kamil Chędkowski"
+          contentPageSEO="Kim jestem"
+          keywordsSEO="Kim jest Kamil Chędkowski informacje"
+          pageTitle="Informacje"
         >
           <>{ParsedContent}</>
         </PostTemplates>
@@ -100,13 +103,15 @@ function WhoPage({ data: { whoPages: data } }) {
   }
   return (
     <PostTemplates
-      contentPageSEO="Kim jestem podstrona"
-      keywordsSEO="Kim jest Kamil Chędkowski"
-      pageTitle="Kim jest Kamil Chędkowski"
+      contentPageSEO="Kim jestem"
+      keywordsSEO="Kim jest Kamil Chędkowski informacje"
+      pageTitle="Informacje"
     >
-      <Headline center black>
-        Kim jestem?: ładowanie
-      </Headline>
+      <>
+        <Headline center black as="h3">
+          Kim jestem?: ładowanie
+        </Headline>
+      </>
     </PostTemplates>
   );
 }

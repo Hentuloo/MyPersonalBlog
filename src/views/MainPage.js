@@ -9,7 +9,7 @@ import Baner from 'components/organism/Baner/Baner';
 
 const POSTS_COUNTER = 4;
 
-const PostWrapper = styled.section`
+const PostWrapper = styled.article`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -35,7 +35,6 @@ const MainPage = ({ data: { posts } }) => {
   return (
     <div>
       <ViewTemplates
-        titlePageSEO="Strona główna Kamil Chędkowski"
         contentPageSEO="Blog o zwiększaniu władzy nad sobą"
         keywordsSEO="chentek w dzialaniu wladza produktywnosc skutecznosc korzyść"
         pageTitle="Strona główna Kamil Chędkowski"

@@ -46,7 +46,7 @@ const SecondTitle = styled(Paragraph)`
     padding-right: 130px;
   }
 `;
-const Title = styled.h2`
+const Title = styled.h3`
   position: absolute;
   top: 0%;
   left: 0%;
@@ -96,7 +96,7 @@ const BookElement = ({ data }) => {
   return (
     <BookWrapper>
       <Title>{data.kind}</Title>
-      <SecondTitle as="h3" black center>
+      <SecondTitle as="h4" black center>
         {data.title}
       </SecondTitle>
       <StyledImageWrapper>

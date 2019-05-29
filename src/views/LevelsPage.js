@@ -20,7 +20,7 @@ const LevelsBlock = styled.div`
 const EntryBlock = styled.div`
   margin-bottom: 80px;
 `;
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.article`
   width: 100%;
   margin: 0px auto;
   min-height: 500px;
@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
 function LevelsPage({ data: { levelses } }) {
   let LevelsBlocks;
   if (levelses) {
-    LevelsBlocks = levelses.map(e => <LevelsElement key={e.title} data={e} />);
+    LevelsBlocks = levelses.map(e => <LevelsElement key={e.id} data={e} />);
   }
 
   return (
@@ -60,6 +60,7 @@ function LevelsPage({ data: { levelses } }) {
 export const LevelsQuery = gql`
   query Levels {
     levelses(where: { status: PUBLISHED }, orderBy: index_ASC) {
+      id
       title
       inspiration
       levelTitle

@@ -110,7 +110,7 @@ const PostContentBlock = ({ description, url, content }) => {
   const ParsedContent = compiled.tree;
   return (
     <div id="tresc">
-      <Paragraph as="h3" black center>
+      <Paragraph as="h2" black center>
         {description}
       </Paragraph>
       <div>{ParsedContent}</div>

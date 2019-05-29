@@ -17,7 +17,7 @@ const StyledImageWrapper = styled.div`
     }
   }
 `;
-const StyledHeadline = styled.h1`
+const StyledHeadline = styled.h2`
   width: 100%;
   display: flex;
   align-items: center;

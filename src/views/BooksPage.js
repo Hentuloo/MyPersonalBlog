@@ -32,12 +32,12 @@ function BooksPage({ data: { bookses } }) {
   return (
     <div>
       <PostTemplates
-        contentPageSEO="Kim jestem podstrona"
-        keywordsSEO="Kim jest Kamil Chędkowski"
-        pageTitle="Kim jest Kamil Chędkowski"
+        contentPageSEO="Książki które przeczytał Kamil Chędkowski"
+        keywordsSEO="Książki Kamil Chędkowski"
+        pageTitle="Książki"
       >
-        <div id="tresc">
-          <Headline black as="h2">
+        <article>
+          <Headline black as="h1">
             KSIĄŻKI
           </Headline>
           <Paragraph blue center>
@@ -52,7 +52,7 @@ function BooksPage({ data: { bookses } }) {
               KSIĄŻKI: ładowanie
             </Headline>
           )}
-        </div>
+        </article>
       </PostTemplates>
     </div>
   );

@@ -10,6 +10,7 @@ import SearchPage from './SearchPage';
 import BooksPage from './BooksPage';
 import RegulationsPage from './RegulationsPage';
 import LevelsPage from './LevelsPage';
+import ErrorPage from './ErrorPage';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
           <Route exact path="/regulamin" component={RegulationsPage} />
           <Route exact path="/trzy-poziomy" component={LevelsPage} />
           <Route path="/szukaj/:like" component={SearchPage} />
+          <Route exact path="/error" component={ErrorPage} />
           <Route path="/:postTitle" component={PostPage} />
+          <Route component={ErrorPage} />
         </Switch>
       </ScrollToTop>
     </Router>

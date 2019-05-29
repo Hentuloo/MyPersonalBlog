@@ -30,7 +30,7 @@ function ViewTemplates({
             {pageTitle}
           </BanerTitle>
           <MenuHorizontal />
-          <>{children}</>
+          <div id="tresc">{children}</div>
           <Footer />
         </>
       </ThemeProvider>

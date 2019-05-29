@@ -86,7 +86,9 @@ const PostTemplates = ({
 
           <Menu postNumber={postNumber} />
           <ContentWrapper>
-            <Content transparentContent={transparentContent}>{children}</Content>
+            <Content transparentContent={transparentContent} id="tresc">
+              {children}
+            </Content>
             <Footer />
           </ContentWrapper>
         </>

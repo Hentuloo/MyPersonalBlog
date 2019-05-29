@@ -27,7 +27,7 @@ const PostWrapper = styled.div`
     }
   }
 `;
-const ContentWrapper = styled.section`
+const ContentWrapper = styled.article`
   padding-bottom: 15px;
 `;
 
@@ -44,12 +44,22 @@ function getUniqueObjectsFromArray(arr, comp) {
 }
 
 const responsResult = (arr, load, uniqueRespons) => {
-  if (arr.length) return <MultiPostsCreator posts={uniqueRespons} />;
+  if (arr.length)
+    return (
+      <>
+        <Headline black as="h1">
+          Wyniki wyszukiwania:
+        </Headline>
+        <MultiPostsCreator posts={uniqueRespons} />
+      </>
+    );
 
   if (load) return <MultiPostsCreator posts={false} />;
   return (
     <>
-      <Headline black>Nie znalazłem takiej wartości! Spróbuj jeszcze raz</Headline>
+      <Headline black as="h1">
+        Nie znalazłem takiej treści! Spróbuj jeszcze raz
+      </Headline>
       <Search placeholder="Wyszukaj wpis który zawiera..." />
     </>
   );
@@ -67,14 +77,12 @@ const SearchPage = ({ data: { content, titles, loading } }) => {
   return (
     <div>
       <PostTemplates
-        titlePageSEO="Strona główna Kamil Chędkowski"
-        contentPageSEO="Blog o zwiększaniu władzy nad sobą"
-        keywordsSEO="chentek w dzialaniu wladza produktywnosc skutecznosc korzyść"
-        pageTitle="Strona główna Kamil Chędkowski"
-        pageTitleAs="h1"
+        contentPageSEO="Wyszukiwarka wpisów"
+        keywordsSEO="Wyszukaj wpis na chentek w dzialaniu"
+        pageTitle="Szukaj"
       >
         <ContentWrapper>
-          <PostWrapper id="tresc">{responsResult(array3, loading, uniqueRespons)}</PostWrapper>
+          <PostWrapper>{responsResult(array3, loading, uniqueRespons)}</PostWrapper>
         </ContentWrapper>
       </PostTemplates>
     </div>
@@ -83,7 +91,7 @@ const SearchPage = ({ data: { content, titles, loading } }) => {
 
 export const singlePost = gql`
   query Post($like: String!) {
-    content: posts(where: { content_contains: $like, status: PUBLISHED, orderBy: index_DESC }) {
+    content: posts(where: { content_contains: $like, status: PUBLISHED }, orderBy: index_DESC) {
       id
       postNumber
       title
@@ -98,7 +106,7 @@ export const singlePost = gql`
         height
       }
     }
-    titles: posts(where: { title_contains: $like, status: PUBLISHED, orderBy: index_DESC }) {
+    titles: posts(where: { title_contains: $like, status: PUBLISHED }, orderBy: index_DESC) {
       id
       postNumber
       title

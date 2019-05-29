@@ -43,7 +43,7 @@ const PostWrapper = styled.div`
     }
   }
 `;
-const ContentWrapper = styled.section`
+const ContentWrapper = styled.article`
   padding-bottom: 15px;
 `;
 
@@ -52,14 +52,13 @@ const AllPostsPage = ({ data: { loading, posts, postsConnection }, loadMorePosts
   return (
     <div>
       <PostTemplates
-        titlePageSEO="Strona główna Kamil Chędkowski"
-        contentPageSEO="Blog o zwiększaniu władzy nad sobą"
-        keywordsSEO="chentek w dzialaniu wladza produktywnosc skutecznosc korzyść"
-        pageTitle="Strona główna Kamil Chędkowski"
+        contentPageSEO="wpisy w kolejności hronologicznej"
+        keywordsSEO="chentek wszystkie wpisy"
+        pageTitle="Wszystkie wpisy"
         pageTitleAs="h1"
       >
         <ContentWrapper>
-          <PostWrapper id="tresc">
+          <PostWrapper>
             <MultiPostsCreator posts={posts} />
           </PostWrapper>
           {areMorePosts && (

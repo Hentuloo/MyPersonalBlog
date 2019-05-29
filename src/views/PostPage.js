@@ -4,7 +4,7 @@ import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GraphImg from 'graphcms-image';
-
+import { Redirect } from 'react-router-dom';
 import PostTemplates from 'templates/PostTemplates';
 import Headline from 'components/atoms/Headline/Headline';
 
@@ -46,7 +46,7 @@ const ImageWrapper = styled.div`
     }
   }
 `;
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.article`
   width: 100%;
   max-width: 1100px;
   margin: 0px auto;
@@ -57,8 +57,16 @@ const ContentWrapper = styled.div`
   }
 `;
 
-function PostPage({ data: { posts, BestPosts } }) {
-  if (posts) {
+function PostPage({ data: { posts, loading, BestPosts, error } }) {
+  console.log(loading);
+  if (error) {
+    return (
+      <PostTemplates transparentContent>
+        <Headline black>Błąd! w połączeniu z serwerem</Headline>
+      </PostTemplates>
+    );
+  }
+  if (posts && !loading) {
     const { postNumber, title, secondTitle: description, url, content, photo, keywords } = posts[0];
     return (
       <PostTemplates
@@ -74,7 +82,7 @@ function PostPage({ data: { posts, BestPosts } }) {
               <Headline as="h1" black>
                 {title}
               </Headline>
-              <GraphImg image={photo} maxWidth={1200} alt={`Obrazek dotyczący: ${title}`} />
+              <GraphImg image={photo} maxWidth={1200} alt={title} />
             </ImageWrapper>
           )}
           <ContentWrapper>
@@ -94,6 +102,9 @@ function PostPage({ data: { posts, BestPosts } }) {
         </>
       </PostTemplates>
     );
+  }
+  if (posts === [] && !loading) {
+    return <Redirect to="/error" />;
   }
   return (
     <PostTemplates transparentContent>

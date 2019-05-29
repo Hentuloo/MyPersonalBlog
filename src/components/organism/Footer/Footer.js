@@ -63,7 +63,7 @@ const Footer = () => {
   return (
     <StyledFooterWrapper>
       <StyledSearchWrapper>
-        <Headline as="h2" white>
+        <Headline as="h3" white>
           Wyszukiwarka::
         </Headline>
         <Search placeholder="Wyszukaj wpis który zawiera..." />

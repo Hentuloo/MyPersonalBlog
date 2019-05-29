@@ -9,7 +9,7 @@ import PostTemplates from 'templates/PostTemplates';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Headline from 'components/atoms/Headline/Headline';
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.article`
   div:nth-of-type(2n) h2 {
     background-color: ${({ theme }) => theme.bluePrimary};
   }
@@ -43,12 +43,12 @@ const compileRequest = data => {
     const compiled = compile(e.content);
     const ParsedContent = compiled.tree;
     return (
-      <div key={e.title}>
+      <section key={e.title}>
         <Headline as="h2" center black>
           {e.title}
         </Headline>
         {ParsedContent}
-      </div>
+      </section>
     );
   });
   return request;
@@ -59,9 +59,9 @@ function RegulationsPage({ data: { regulationses: data } }) {
     return (
       <div>
         <PostTemplates
-          contentPageSEO="Kim jestem podstrona"
-          keywordsSEO="Kim jest Kamil Chędkowski"
-          pageTitle="Kim jest Kamil Chędkowski"
+          contentPageSEO="Regulamin Bloga chentek w dzialaniu"
+          keywordsSEO="Regulamin Bloga chentek w dzialaniu"
+          pageTitle="Regulamin"
         >
           <ContentWrapper>{compileRequest(data)}</ContentWrapper>
         </PostTemplates>
@@ -70,9 +70,9 @@ function RegulationsPage({ data: { regulationses: data } }) {
   }
   return (
     <PostTemplates
-      contentPageSEO="Kim jestem podstrona"
-      keywordsSEO="Kim jest Kamil Chędkowski"
-      pageTitle="Kim jest Kamil Chędkowski"
+      contentPageSEO="Regulamin Bloga chentek w dzialaniu"
+      keywordsSEO="Regulamin Bloga chentek w dzialaniu"
+      pageTitle="Regulamin"
     >
       <Headline center black>
         Regulamin: ładowanie

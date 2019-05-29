@@ -74,7 +74,7 @@ class MenuHorizontal extends Component {
           <div>
             <MenuElements horizontal />
           </div>
-          <StyledMenuSmallIcons>
+          <StyledMenuSmallIcons as="aside">
             <MenuSmallIcons />
           </StyledMenuSmallIcons>
         </StyledMenuWrapper>

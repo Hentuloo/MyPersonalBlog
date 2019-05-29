@@ -94,7 +94,7 @@ const Post = ({ disable, postNumber, title, description, url, podcast, data, pho
     return (
       <PostWrapper>
         <Link to={`/${url}`}>
-          <Headline as="h2" blue>
+          <Headline as="h3" blue>
             {title}
           </Headline>
           <ImageWrapper>
@@ -106,7 +106,7 @@ const Post = ({ disable, postNumber, title, description, url, podcast, data, pho
             <span>{[...data].slice(0, 10)}</span>
           </ImageWrapper>
         </Link>
-        <StyledHeadline as="h3" small blackFont>
+        <StyledHeadline as="p" small blackFont>
           {description}
         </StyledHeadline>
       </PostWrapper>

@@ -85,8 +85,8 @@ const levels = element => {
   const elements = [];
   for (let n = 0; n < element.levelTitle.length; n++) {
     elements.push(
-      <Level done={element.done[n]}>
-        <LevelTitle gray blackFont as="p">
+      <Level done={element.done[n]} key={n}>
+        <LevelTitle gray blackFont as="div">
           {parseMarkdow(element.levelTitle[n])}
         </LevelTitle>
         <LevelTime center black as="em">
