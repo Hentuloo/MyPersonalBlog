@@ -15,6 +15,19 @@ const ParagraphLink = styled(Link)`
 const StyledCopyrights = styled.div`
   flex-basis: 100%;
 `;
+const TagsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  a {
+    margin: 3px 5px;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-size: ${({ theme }) => theme.font.xs};
+  }
+`;
 const StyledSecondWrapper = styled.div`
   a {
     display: block;
@@ -37,7 +50,7 @@ const StyledSocialWrapper = styled.div`
 `;
 const StyledSearchWrapper = styled.div`
   input {
-    margin: 0px auto;
+    margin: 0px auto 20px auto;
   }
 `;
 const StyledFooterWrapper = styled.footer`
@@ -67,6 +80,53 @@ const Footer = () => {
           Wyszukiwarka::
         </Headline>
         <Search placeholder="Wyszukaj wpis który zawiera..." />
+        <TagsWrapper>
+          <Headline as="h3" white>
+            Tagi:
+          </Headline>
+          <Paragraph as={Link} to="/szukaj/podsumowani">
+            Podsumowania
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/być">
+            Być-jak
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/trik">
+            Triki
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/władza">
+            Władza
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/książk">
+            Książka
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/akceptacja">
+            Akceptacja
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/biega">
+            Bieganie
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/stoicy">
+            Stoicyzm
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/w%20poszukiwaniu">
+            W poszukiwaniu szczęścia
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/gra">
+            gra
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/ Dan Millman">
+            Dan Millman
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/Wojownik">
+            Wojownik
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/Carnegie">
+            Carnegie
+          </Paragraph>
+          <Paragraph as={Link} to="/szukaj/Jobs">
+            Jobs
+          </Paragraph>
+        </TagsWrapper>
       </StyledSearchWrapper>
       <StyledSecondWrapper>
         <Headline as="h3">Email: szyszaqaz@o2.pl</Headline>
