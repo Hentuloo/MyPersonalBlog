@@ -1,5 +1,6 @@
 {
   "name": "blog-kamil",
+  "homepage": "http://chentekwdzialaniu.pl/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +13,7 @@
     "marksy": "^7.0.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.5",
+    "react-cookie-consent": "^2.3.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-jsx-parser": "^1.16.1",

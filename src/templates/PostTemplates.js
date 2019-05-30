@@ -7,6 +7,7 @@ import Menu from 'components/organism/menu/Menu';
 import Footer from 'components/organism/Footer/Footer';
 import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 import HelmetSEO from 'components/organism/HelmetSEO/HelmetSEO';
+import CookieAlert from '../components/atoms/CookieAlert';
 
 const BackgroundBlocks = styled.div`
   position: fixed;
@@ -91,6 +92,7 @@ const PostTemplates = ({
             </Content>
             <Footer />
           </ContentWrapper>
+          <CookieAlert />
         </>
       </ThemeProvider>
     </div>
