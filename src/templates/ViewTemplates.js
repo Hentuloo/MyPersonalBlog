@@ -7,6 +7,7 @@ import MenuHorizontal from 'components/organism/menu/MenuHorizontal';
 import Footer from 'components/organism/Footer/Footer';
 import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 import HelmetSEO from 'components/organism/HelmetSEO/HelmetSEO';
+import CookieAlert from '../components/atoms/CookieAlert';
 
 function ViewTemplates({
   children,
@@ -32,6 +33,7 @@ function ViewTemplates({
           <MenuHorizontal />
           <div id="tresc">{children}</div>
           <Footer />
+          <CookieAlert />
         </>
       </ThemeProvider>
     </div>
