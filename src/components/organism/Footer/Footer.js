@@ -143,17 +143,23 @@ const Footer = () => {
       </StyledSecondWrapper>
       <div>
         <Headline as="h3">Pojawiam się również tam:</Headline>
-        <StyledSocialWrapper as="a" href="https://www.instagram.com">
+        <StyledSocialWrapper as="a" href="https://www.instagram.com/chentekwdzialaniu/">
           <Icon className="icon-instagram" as="i" />
           <Headline as="h4">Instagram</Headline>
         </StyledSocialWrapper>
-        <StyledSocialWrapper as="a" href="https://www.instagram.com">
+        <StyledSocialWrapper
+          as="a"
+          href="https://www.youtube.com/channel/UCnC-wsfLa71AFCk9MBb2QaA?view_as=subscriber"
+        >
           <Icon className=" icon-youtube-play" as="i" />
           <Headline as="h4">Youtube</Headline>
         </StyledSocialWrapper>
-        <StyledSocialWrapper as="a" href="https://www.instagram.com">
+        <StyledSocialWrapper
+          as="a"
+          href="https://www.youtube.com/channel/UCnC-wsfLa71AFCk9MBb2QaA?view_as=subscriber"
+        >
           <Icon className="icon-mic" as="i" />
-          <Headline as="h4">Podcast</Headline>
+          <Headline as="h4">Podcast(YT)</Headline>
         </StyledSocialWrapper>
       </div>
       <StyledCopyrights>Copyrights 2019 by Kamil Chędkowski</StyledCopyrights>
