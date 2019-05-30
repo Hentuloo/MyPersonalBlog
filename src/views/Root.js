@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Analytics from 'react-router-ga';
 import ScrollToTop from 'react-router-scroll-top';
 
 import MainPage from './MainPage';
@@ -15,20 +16,23 @@ import ErrorPage from './ErrorPage';
 function App() {
   return (
     <Router>
-      <ScrollToTop>
-        <Switch>
-          <Route exact path="/" component={MainPage} />
-          <Route exact path="/kim-jestem" component={WhoPage} />
-          <Route exact path="/wszystkie-wpisy" component={AllPostsPage} />
-          <Route exact path="/ksiazki" component={BooksPage} />
-          <Route exact path="/regulamin" component={RegulationsPage} />
-          <Route exact path="/trzy-poziomy" component={LevelsPage} />
-          <Route path="/szukaj/:like" component={SearchPage} />
-          <Route exact path="/error" component={ErrorPage} />
-          <Route path="/:postTitle" component={PostPage} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </ScrollToTop>
+      <Analytics id="UA-0000000-0">
+        {/* ID from google analytica */}
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/kim-jestem" component={WhoPage} />
+            <Route exact path="/wszystkie-wpisy" component={AllPostsPage} />
+            <Route exact path="/ksiazki" component={BooksPage} />
+            <Route exact path="/regulamin" component={RegulationsPage} />
+            <Route exact path="/trzy-poziomy" component={LevelsPage} />
+            <Route path="/szukaj/:like" component={SearchPage} />
+            <Route exact path="/error" component={ErrorPage} />
+            <Route path="/:postTitle" component={PostPage} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </ScrollToTop>
+      </Analytics>
     </Router>
   );
 }
