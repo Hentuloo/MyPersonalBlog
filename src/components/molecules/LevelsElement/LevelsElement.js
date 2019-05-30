@@ -20,9 +20,12 @@ const LevelTime = styled(Paragraph)`
   }
 `;
 const LevelTitle = styled(Headline)`
-  flex-basis: 75%;
+  flex-basis: 100%;
   padding: 10px 10px;
   font-size: ${({ theme }) => theme.font.m};
+  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
+    flex-basis: 75%;
+  }
 `;
 const Level = styled.div`
   display: flex;

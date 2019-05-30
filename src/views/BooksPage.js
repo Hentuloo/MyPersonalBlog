@@ -17,9 +17,10 @@ const BooksWrapper = styled.div`
     flex-grow: 1;
     flex-basis: 33.333%;
     margin: 20px 10px;
-    min-width: 350px;
+    min-width: 220px;
     @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
       margin: 20px 40px;
+      min-width: 350px;
     }
   }
 `;

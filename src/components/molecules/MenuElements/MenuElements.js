@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Icon from 'components/atoms/Icon/Icon';
 
 const ListElement = styled(Icon)`
@@ -10,7 +10,8 @@ const ListElement = styled(Icon)`
   text-align: center;
   padding: 4px 0px;
 
-  &:hover {
+  &:hover,
+  .active {
     transform: translateY(4px);
     color: ${({ theme }) => theme.blueSecondary};
   }
@@ -44,34 +45,34 @@ const MenuElements = ({ horizontal }) => {
         Przejdź do treści
       </a>
       <ListElement as="li">
-        <Link to="/">
+        <NavLink exact to="/">
           <i className="icon-home" />
           <TitleElement>Strona główna</TitleElement>
-        </Link>
+        </NavLink>
       </ListElement>
       <ListElement as="li">
-        <Link to="/kim-jestem">
+        <NavLink to="/kim-jestem">
           <i className="icon-user" />
           <TitleElement>Kim jestem?</TitleElement>
-        </Link>
+        </NavLink>
       </ListElement>
       <ListElement as="li">
-        <Link to="/wszystkie-wpisy">
+        <NavLink to="/wszystkie-wpisy">
           <i className="icon-pinboard" />
           <TitleElement>Wszystkie wpisy</TitleElement>
-        </Link>
+        </NavLink>
       </ListElement>
       <ListElement as="li">
-        <Link to="/trzy-poziomy">
+        <NavLink to="/trzy-poziomy">
           <i className="icon-check" />
           <TitleElement>Trzy poziomy</TitleElement>
-        </Link>
+        </NavLink>
       </ListElement>
       <ListElement as="li">
-        <Link to="/ksiazki">
+        <NavLink to="/ksiazki">
           <i className="icon-book" />
           <TitleElement>Książki</TitleElement>
-        </Link>
+        </NavLink>
       </ListElement>
     </ListWrapper>
   );

@@ -37,6 +37,7 @@ const StyledSecondWrapper = styled.div`
   }
 `;
 const StyledSocialWrapper = styled.div`
+  text-decoration: none;
   i {
     font-size: ${({ theme }) => theme.font.xl};
     background-color: white;
