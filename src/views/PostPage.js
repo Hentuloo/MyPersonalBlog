@@ -5,13 +5,29 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GraphImg from 'graphcms-image';
 import { Redirect } from 'react-router-dom';
+import { FacebookProvider, Comments } from 'react-facebook';
 import PostTemplates from 'templates/PostTemplates';
 import Headline from 'components/atoms/Headline/Headline';
 
 import PostContentBlock from 'components/organism/PostContentBlock/PostContentBlock';
 import TheBestPosts from 'components/organism/TheBestPosts/TheBestPosts';
 
-const StyledBestPostsWrapper = styled.section`
+const FacebookCommentsWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  .fb-comment-embed {
+    border: 1px black solid;
+  }
+`;
+const FacebookComments = styled.section`
+  max-width: 1100px;
+  text-align: center;
+  margin: 40px auto;
+  padding-bottom: 20px;
+  background-color: ${({ theme }) => theme.graySecondary};
+`;
+const BestPostsWrapper = styled.section`
   margin-top: 100px;
   background-color: ${({ theme }) => theme.graySecondary};
 `;
@@ -95,10 +111,18 @@ function PostPage({ data: { posts, loading, BestPosts, error } }) {
               />
             }
           </ContentWrapper>
-          <StyledBestPostsWrapper>
+          <FacebookComments>
+            <Headline blue>KOMENTARZE</Headline>
+            <FacebookCommentsWrapper>
+              <FacebookProvider appId="123123123123" className="fb-comment-embed">
+                <Comments href={`www.chentekwdzialaniu.pl/wpis/${title}`} />
+              </FacebookProvider>
+            </FacebookCommentsWrapper>
+          </FacebookComments>
+          <BestPostsWrapper>
             <Headline black>Najpopularniejsze wpisy</Headline>
             <TheBestPosts as="section" BestPosts={BestPosts} />
-          </StyledBestPostsWrapper>
+          </BestPostsWrapper>
         </>
       </PostTemplates>
     );
@@ -116,6 +140,7 @@ function PostPage({ data: { posts, loading, BestPosts, error } }) {
 export const singlePost = gql`
   query($url: String!, $first: Int!) {
     posts(where: { url: $url }) {
+      id
       postNumber
       keywords
       content
