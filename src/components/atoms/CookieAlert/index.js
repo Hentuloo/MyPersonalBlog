@@ -7,7 +7,8 @@ import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const AlertWrapper = styled.div`
   .container {
-    width: 100%;
+    width: 94%;
+    margin: 0px auto;
     border: 2px black solid;
     padding: 0px 20px;
     background-color: ${({ theme }) => theme.black};
@@ -19,6 +20,7 @@ const AlertWrapper = styled.div`
     z-index: 12;
     position: fixed;
     bottom: 0%;
+    right: 3%;
     a {
       font-size: ${({ theme }) => theme.font.xs};
       font-weight: ${({ theme }) => theme.font.light};
@@ -69,6 +71,7 @@ const CookieAlert = () => (
     <AlertWrapper>
       <CookieConsent
         disableStyles
+        debug
         location="none"
         containerClasses="container"
         acceptOnScrollPercentage={100}
