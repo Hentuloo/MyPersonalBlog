@@ -85,7 +85,7 @@ const Footer = () => {
           <Headline as="h3" white>
             Tagi:
           </Headline>
-          <Paragraph as={Link} to="/szukaj/podsumowani">
+          <Paragraph as={Link} to="/szukaj/podsumow">
             Podsumowania
           </Paragraph>
           <Paragraph as={Link} to="/szukaj/być">
@@ -94,31 +94,31 @@ const Footer = () => {
           <Paragraph as={Link} to="/szukaj/trik">
             Triki
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/władza">
+          <Paragraph as={Link} to="/szukaj/władz">
             Władza
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/książk">
+          <Paragraph as={Link} to="/szukaj/ksią">
             Książka
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/akceptacja">
+          <Paragraph as={Link} to="/szukaj/akcept">
             Akceptacja
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/biega">
+          <Paragraph as={Link} to="/szukaj/bieg">
             Bieganie
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/stoicy">
+          <Paragraph as={Link} to="/szukaj/stoi">
             Stoicyzm
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/w%20poszukiwaniu">
+          <Paragraph as={Link} to="/szukaj/poszukiw">
             W poszukiwaniu szczęścia
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/gra">
+          <Paragraph as={Link} to="/szukaj/gr">
             gra
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/ Dan Millman">
+          <Paragraph as={Link} to="/szukaj/Dan Millman">
             Dan Millman
           </Paragraph>
-          <Paragraph as={Link} to="/szukaj/Wojownik">
+          <Paragraph as={Link} to="/szukaj/Wojown">
             Wojownik
           </Paragraph>
           <Paragraph as={Link} to="/szukaj/Carnegie">

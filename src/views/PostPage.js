@@ -74,7 +74,6 @@ const ContentWrapper = styled.article`
 `;
 
 function PostPage({ data: { posts, loading, BestPosts, error } }) {
-  console.log(loading);
   if (error) {
     return (
       <PostTemplates transparentContent>
@@ -155,7 +154,12 @@ export const singlePost = gql`
         height
       }
     }
-    BestPosts: posts(where: { status: PUBLISHED }, orderBy: index_DESC, first: $first, skip: 0) {
+    BestPosts: posts(
+      where: { status: PUBLISHED, oneOfBest: true }
+      orderBy: index_DESC
+      first: $first
+      skip: 0
+    ) {
       id
       postNumber
       title

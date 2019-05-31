@@ -37,7 +37,7 @@ const MainPage = ({ data: { posts } }) => {
       <ViewTemplates
         contentPageSEO="Blog o zwiększaniu władzy nad sobą"
         keywordsSEO="chentek w dzialaniu wladza produktywnosc skutecznosc korzyść"
-        pageTitle="Strona główna Kamil Chędkowski"
+        pageTitle="Strona główna"
         pageTitleAs="h1"
       >
         <div>

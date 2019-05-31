@@ -38,7 +38,7 @@ const JsxParserWrapper = styled.div`
   margin: 0px auto;
 `;
 
-const PostContentBlock = ({ description, url, content }) => {
+const PostContentBlock = ({ description, content }) => {
   const compile = marksy({
     createElement,
     elements: {
@@ -114,14 +114,12 @@ const PostContentBlock = ({ description, url, content }) => {
         {description}
       </Paragraph>
       <div>{ParsedContent}</div>
-      <div>{url}</div>
     </div>
   );
 };
 
 PostContentBlock.propTypes = {
   description: PropTypes.string,
-  url: PropTypes.string,
   content: PropTypes.string,
   // eslint-disable-next-line react/no-unused-prop-types
   href: PropTypes.string,
@@ -130,7 +128,6 @@ PostContentBlock.propTypes = {
 };
 PostContentBlock.defaultProps = {
   description: '',
-  url: '',
   content: '',
   children: null,
   href: '#',
