@@ -8,12 +8,23 @@ import Paragraph from 'components/atoms/Paragraph/Paragraph';
 const ParagraphLink = styled.a`
   padding: 2px 6px;
   margin: 0px 6px;
-  color: white;
+  color: black;
+  text-decoration:none;
+  position:relative;
+  &::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:3px;
+    bottom:0%
+    left:0%;
+    background-color:white;
+  }
 `;
 const Content = styled(Paragraph)`
   padding: 4px 10px;
   font-size: ${({ theme }) => theme.font.s};
-  background-color: ${({ theme }) => theme.graySecondary};
+  background-color: ${({ theme }) => theme.graySecondaryO};
   word-spacing: 4px;
   position: relative;
   z-index: 11;
@@ -32,7 +43,7 @@ const StyledImageWrapper = styled.div`
 `;
 const StyledGraphImage = styled(GraphImg)`
   position: absolute;
-  width: 120px;
+  width: 100px;
   max-height: 200px;
   border: white 4px solid;
 `;

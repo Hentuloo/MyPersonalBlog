@@ -22,7 +22,7 @@ HelmetSEO.propTypes = {
 };
 
 HelmetSEO.defaultProps = {
-  titlePageSEO: 'Strona główna',
+  titlePageSEO: 'chentek-stronka',
   contentPageSEO: 'Blog o zwiększaniu władzy nad sobą',
   keywordsSEO: 'chentek w dzialaniu wladza produktywnosc skutecznosc',
 };

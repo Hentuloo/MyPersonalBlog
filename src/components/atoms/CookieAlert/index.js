@@ -71,7 +71,6 @@ const CookieAlert = () => (
     <AlertWrapper>
       <CookieConsent
         disableStyles
-        debug
         location="none"
         containerClasses="container"
         acceptOnScrollPercentage={100}

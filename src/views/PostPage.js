@@ -74,7 +74,6 @@ const ContentWrapper = styled.article`
 `;
 
 function PostPage({ data: { posts, loading, BestPosts, error } }) {
-  console.log(loading);
   if (error) {
     return (
       <PostTemplates transparentContent>
@@ -82,7 +81,11 @@ function PostPage({ data: { posts, loading, BestPosts, error } }) {
       </PostTemplates>
     );
   }
+
   if (posts && !loading) {
+    if (posts.length === 0) {
+      return <Redirect to="/error" />;
+    }
     const { postNumber, title, secondTitle: description, url, content, photo, keywords } = posts[0];
     return (
       <PostTemplates
@@ -155,7 +158,12 @@ export const singlePost = gql`
         height
       }
     }
-    BestPosts: posts(where: { status: PUBLISHED }, orderBy: index_DESC, first: $first, skip: 0) {
+    BestPosts: posts(
+      where: { status: PUBLISHED, oneOfBest: true }
+      orderBy: index_DESC
+      first: $first
+      skip: 0
+    ) {
       id
       postNumber
       title

@@ -9,18 +9,11 @@ import BanerTitle from 'components/atoms/BanerTitle/BanerTitle';
 import HelmetSEO from 'components/organism/HelmetSEO/HelmetSEO';
 import CookieAlert from '../components/atoms/CookieAlert';
 
-function ViewTemplates({
-  children,
-  pageTitle,
-  pageTitleAs,
-  titlePageSEO,
-  contentPageSEO,
-  keywordsSEO,
-}) {
+function ViewTemplates({ children, pageTitle, pageTitleAs, contentPageSEO, keywordsSEO }) {
   return (
     <div>
       <HelmetSEO
-        titlePageSEO={titlePageSEO}
+        titlePageSEO={pageTitle}
         contentPageSEO={contentPageSEO}
         keywordsSEO={keywordsSEO}
       />
@@ -44,7 +37,6 @@ ViewTemplates.propTypes = {
   children: PropTypes.element.isRequired,
   pageTitle: PropTypes.string,
   pageTitleAs: PropTypes.string,
-  titlePageSEO: PropTypes.string,
   contentPageSEO: PropTypes.string,
   keywordsSEO: PropTypes.string,
 };
@@ -52,7 +44,6 @@ ViewTemplates.propTypes = {
 ViewTemplates.defaultProps = {
   pageTitle: 'Kamil Chędkowski',
   pageTitleAs: 'header',
-  titlePageSEO: null,
   contentPageSEO: null,
   keywordsSEO: null,
 };
