@@ -17,9 +17,18 @@ const OlListWrapper = styled.ol`
   }
 `;
 const ParagraphQuote = styled(Paragraph)`
+  width: 90%;
+  max-width: 500px;
+  margin: 6px auto;
   div {
     color: white;
   }
+`;
+const ContentCenter = styled(Paragraph)`
+  width: 90%;
+  max-width: 500px;
+  margin: 0px auto;
+  padding: 0px;
 `;
 const ContentChildren = styled(Paragraph)`
   margin: 15px 15px;
@@ -33,11 +42,14 @@ const ParagraphLink = styled(Paragraph)`
 const HeadlineWrapper = styled(Headline)`
   margin: 10px 0px;
 `;
+
 const JsxParserWrapper = styled.div`
   max-width: 80%;
   margin: 0px auto;
 `;
-
+const Wrapper = styled.div`
+  white-space: pre-line;
+`;
 const PostContentBlock = ({ description, content }) => {
   const compile = marksy({
     createElement,
@@ -60,21 +72,28 @@ const PostContentBlock = ({ description, content }) => {
       },
       h1({ children }) {
         return (
-          <HeadlineWrapper as="h3" blue center>
+          <ContentCenter as="div" center blackFont>
             {children}
-          </HeadlineWrapper>
+          </ContentCenter>
         );
       },
       h2({ children }) {
         return (
-          <HeadlineWrapper as="h3" black center>
+          <HeadlineWrapper as="h3" center blackFont>
             {children}
           </HeadlineWrapper>
         );
       },
       h3({ children }) {
         return (
-          <HeadlineWrapper as="h3" center blackFont>
+          <HeadlineWrapper as="h3" black center>
+            {children}
+          </HeadlineWrapper>
+        );
+      },
+      h4({ children }) {
+        return (
+          <HeadlineWrapper as="h3" blue center>
             {children}
           </HeadlineWrapper>
         );
@@ -89,7 +108,7 @@ const PostContentBlock = ({ description, content }) => {
       },
       a({ href, children }) {
         return (
-          <ParagraphLink as="a" black link href={href}>
+          <ParagraphLink as="a" link href={href}>
             {children}
           </ParagraphLink>
         );
@@ -109,12 +128,12 @@ const PostContentBlock = ({ description, content }) => {
   const compiled = compile(content);
   const ParsedContent = compiled.tree;
   return (
-    <div id="tresc">
+    <Wrapper id="tresc">
       <Paragraph as="h2" black center>
         {description}
       </Paragraph>
       <div>{ParsedContent}</div>
-    </div>
+    </Wrapper>
   );
 };
 
