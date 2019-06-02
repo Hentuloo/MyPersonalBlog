@@ -10,6 +10,10 @@ import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Headline from 'components/atoms/Headline/Headline';
 
+const StrongParagraph = styled(Paragraph)`
+  background-color: ${({ theme }) => theme.blackAlpha};
+  padding: 0px 2px;
+`;
 const OlListWrapper = styled.ol`
   div {
     padding: 0px 6px;
@@ -38,6 +42,18 @@ const ContentChildren = styled(Paragraph)`
 const ParagraphLink = styled(Paragraph)`
   padding: 2px 6px;
   margin: 0px 4px;
+  text-decoration: none;
+  position: relative;
+  color: ${({ theme }) => theme.grayPrimary};
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0%;
+    left: 0%;
+    background-color: white;
+  }
 `;
 const HeadlineWrapper = styled(Headline)`
   margin: 10px 0px;
@@ -115,9 +131,9 @@ const PostContentBlock = ({ description, content }) => {
       },
       strong({ children }) {
         return (
-          <ParagraphLink as="strong" black light>
+          <StrongParagraph as="strong" black light>
             {children}
-          </ParagraphLink>
+          </StrongParagraph>
         );
       },
       ol({ children }) {
