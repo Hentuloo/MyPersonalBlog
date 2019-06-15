@@ -21,11 +21,15 @@ const FacebookCommentsWrapper = styled.div`
   }
 `;
 const FacebookComments = styled.section`
-  max-width: 1100px;
+  max-width: 700px;
   text-align: center;
   margin: 40px auto;
   padding-bottom: 20px;
   background-color: ${({ theme }) => theme.graySecondary};
+
+  @media (min-width: 1300px) {
+    max-width: 1000px;
+  }
 `;
 const BestPostsWrapper = styled.section`
   margin-top: 100px;
@@ -33,8 +37,11 @@ const BestPostsWrapper = styled.section`
 `;
 const ImageWrapper = styled.div`
   position: relative;
-  max-width: 1100px;
+  max-width: 700px;
   margin: 0px auto;
+  @media (min-width: 1300px) {
+    max-width: 1000px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -64,9 +71,12 @@ const ImageWrapper = styled.div`
 `;
 const ContentWrapper = styled.article`
   width: 100%;
-  max-width: 1100px;
+  max-width: 700px;
   margin: 0px auto;
   min-height: 500px;
+  @media (min-width: 1300px) {
+    max-width: 1000px;
+  }
   background-color: ${({ theme }) => theme.graySecondary};
   p {
     padding: 20px;

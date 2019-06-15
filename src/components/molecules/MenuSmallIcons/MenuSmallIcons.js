@@ -10,6 +10,8 @@ const StyledWrapper = styled.div`
   a {
     display: block;
     flex-basis: 33.333%;
+    color: white;
+    text-decoration: none;
     &:hover {
       color: ${({ theme }) => theme.blueThird};
     }
@@ -18,9 +20,14 @@ const StyledWrapper = styled.div`
 
 const MenuHeader = () => (
   <StyledWrapper>
-    <Icon className="icon-facebook" as="a" aria-label="facebook link" />
-    <Icon className="icon-medium" as="a" aria-label="medium link" />
-    <Icon className="icon-instagram" as="a" aria-label="instagram link" />
+    <Icon className="icon-facebook" as="a" href="#" aria-label="facebook link" />
+    <Icon className="icon-medium" as="a" href="#" aria-label="medium link" />
+    <Icon
+      className="icon-instagram"
+      as="a"
+      href="https://www.instagram.com/chentekwdzialaniu/"
+      aria-label="instagram link"
+    />
   </StyledWrapper>
 );
 

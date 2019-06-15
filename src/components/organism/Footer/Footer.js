@@ -138,7 +138,7 @@ const Footer = () => {
         <ParagraphLink as={Link} to="/regulamin">
           Polityka prywatności i regulamin
         </ParagraphLink>
-        <Paragraph as="a" link white light>
+        <Paragraph as="a" href="https://www.chedkowskiportfolio.pl" link white light>
           Jako programista (portfolio)
         </Paragraph>
       </StyledSecondWrapper>

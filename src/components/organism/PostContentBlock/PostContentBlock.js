@@ -60,8 +60,11 @@ const HeadlineWrapper = styled(Headline)`
 `;
 
 const JsxParserWrapper = styled.div`
-  max-width: 80%;
+  max-width: 90%;
   margin: 0px auto;
+  @media (min-width: ${({ theme }) => theme.breakPointMobile}) {
+    max-width: 60%;
+  }
 `;
 const Wrapper = styled.div`
   white-space: pre-line;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
+import Favico from 'images/favicon.ico';
 
 const HelmetSEO = ({ titlePageSEO, contentPageSEO, keywordsSEO }) => {
   return (
@@ -11,6 +12,7 @@ const HelmetSEO = ({ titlePageSEO, contentPageSEO, keywordsSEO }) => {
       <link rel="index" title="Strona główna" href="http://chentekwdzialaniu.pl" />
       <title>{titlePageSEO}</title>
       <meta name="theme-color" content="#1a242d" />
+      <link rel="icon" type="image/png" href={Favico} sizes="16x16" />
     </Helmet>
   );
 };
